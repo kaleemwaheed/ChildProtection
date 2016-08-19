@@ -1,5 +1,9 @@
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\BOL.dll
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\BOL.pdb
-C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\obj\Debug\BOL.dll
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\obj\Debug\BOL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\BOL.dll.config
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\EntityFramework.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\EntityFramework.xml
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BOL\bin\Debug\EntityFramework.SqlServer.xml

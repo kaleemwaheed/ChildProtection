@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChildProtectionDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_ChildInfo">
+    <Key>
+      <PropertyRef Name="ChildId" />
+    </Key>
+    <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChildName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChildAlternativeName" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Sex" Type="char" MaxLength="6" />
+    <Property Name="Build" Type="char" MaxLength="10" />
+    <Property Name="HairColor" Type="char" MaxLength="10" />
+    <Property Name="EyeColor" Type="char" MaxLength="10" />
+    <Property Name="Glases" Type="char" MaxLength="3" />
+    <Property Name="IdentityMark" Type="varchar" MaxLength="50" />
+    <Property Name="Shirt" Type="varchar" MaxLength="50" />
+    <Property Name="Trouser/Skert" Type="varchar" MaxLength="50" />
+    <Property Name="imageUrl" Type="nvarchar(max)" />
+    <Property Name="IsApproved" Type="varchar" MaxLength="1" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ChildProtectionDbModelStoreContainer">
+    <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

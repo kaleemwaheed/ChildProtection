@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChildProtectionDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_ChildInfo">
+    <Key>
+      <PropertyRef Name="ChildId" />
+    </Key>
+    <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChildName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChildAlternativeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Sex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Glases" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="IdentityMark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Shirt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Trouser_Skert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="imageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ChildProtectionDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" />
+  </EntityContainer>
+</Schema>
