@@ -1,0 +1,9 @@
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\bin\Debug\BLL.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\bin\Debug\BLL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\obj\Debug\BLL.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\obj\Debug\BLL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\bin\Debug\BOL.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\bin\Debug\DAL.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\bin\Debug\BOL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\BLL\bin\Debug\DAL.pdb
