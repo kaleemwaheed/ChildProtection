@@ -39,3 +39,5 @@ C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProte
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\EntityFramework.xml
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\EntityFramework.SqlServer.dll
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\EntityFramework.SqlServer.xml
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\DAL.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\DAL.pdb

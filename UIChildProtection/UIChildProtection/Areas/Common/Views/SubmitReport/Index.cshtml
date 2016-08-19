@@ -1,13 +1,26 @@
 ﻿@model BOL.tbl_ChildInfo
-
+<script>
+function Upload() {
+        var fileUpload = document.getElementById("fileUpload");
+        if (typeof (fileUpload.files) != "undefined") {
+            var size = parseFloat(fileUpload.files[0].size / 1024).toFixed(2);
+            alert(size + " KB.");
+        } else {
+            alert("This browser does not support HTML5.");
+        }
+    }
+</script>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+@if (TempData["Msg"] != null)
+{
+    <h3>@TempData["Msg"].ToString()</h3>
+}
 
-
-@using (Html.BeginForm("Create","SubmitReport",FormMethod.Post)) 
+@using (Html.BeginForm("Create","SubmitReport",FormMethod.Post ,new { enctype = "multipart/form-data" })) 
 {
     @Html.AntiForgeryToken()
     
@@ -106,8 +119,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.imageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.imageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.imageUrl, "", new { @class = "text-danger" })
+                <input type="file" name="file" id="file" style="width: 100%;" /> <br />
+
+
+
+                @*@Html.EditorFor(model => model.IsApproved, new { htmlAttributes = new { @class = "form-control" } })*@
             </div>
         </div>
 
@@ -129,7 +145,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create"  onclick="Upload()" class="btn btn-default" />
             </div>
         </div>
     </div>
