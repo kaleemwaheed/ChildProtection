@@ -18,7 +18,7 @@
     <Property Name="Trouser_Skert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="imageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="ChildProtectionDbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" />

@@ -11,13 +11,23 @@ namespace UIChildProtection.Areas.Common.Controllers
     {
         // GET: Common/BrowseMissingChild
         private ChildInfoBs objBs;
+
         public BrowseMissingChildController()
         {
             objBs = new ChildInfoBs();
         }
         public ActionResult Index()
         {
+           
             var childinfo = objBs.GetALL();
+            return View(childinfo);
+        }
+        public ActionResult Display(string SortOrder)
+        {
+            ViewBag.SortOrder = SortOrder;
+            int abc = Convert.ToInt32(SortOrder);
+            
+            var childinfo = objBs.GetALL().Where(x => x.ChildId == abc);
             return View(childinfo);
         }
     }

@@ -18,7 +18,7 @@
     <Property Name="Trouser/Skert" Type="varchar" MaxLength="50" />
     <Property Name="imageUrl" Type="nvarchar(max)" />
     <Property Name="IsApproved" Type="varchar" MaxLength="1" />
-    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
   </EntityType>
   <EntityContainer Name="ChildProtectionDbModelStoreContainer">
     <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
