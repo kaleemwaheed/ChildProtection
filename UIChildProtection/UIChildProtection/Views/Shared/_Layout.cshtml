@@ -24,6 +24,18 @@
                         <li> @Html.ActionLink("Home", "Index", new { Controller = "Home", area = "Common" })</li>
                         <li> @Html.ActionLink("Create Report", "Index", new { Controller = "SubmitReport", area = "Common" })</li>
                         <li> @Html.ActionLink("Missing Child", "Index", new { Controller = "BrowseMissingChild", area = "Common" })</li>
+                        
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                    
+                       
+                        <li> @Html.ActionLink("Register", "Index", new { Controller = "RegisterUser", area = "Admin" })</li>
+                        <li> @Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", area = "Security" })</li>
+                        }
+                        else
+                        {
+                            <li> @Html.ActionLink("Login", "Index", new { Controller = "Login", area = "Security" })</li>
+                        }
 
                     </ul>
                 </div>
