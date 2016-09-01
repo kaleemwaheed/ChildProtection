@@ -24,7 +24,8 @@
                         <li> @Html.ActionLink("Home", "Index", new { Controller = "Home", area = "Common" })</li>
                         <li> @Html.ActionLink("Create Report", "Index", new { Controller = "SubmitReport", area = "Common" })</li>
                         <li> @Html.ActionLink("Missing Child", "Index", new { Controller = "BrowseMissingChild", area = "Common" })</li>
-                        
+
+                        <li> @Html.ActionLink("Approve", "Index", new { Controller = "ApproveReport", area = "Admin" })</li>
                         @if (User.Identity.IsAuthenticated)
                         {
                     

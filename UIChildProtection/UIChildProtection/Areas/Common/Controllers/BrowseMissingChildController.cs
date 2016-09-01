@@ -19,7 +19,7 @@ namespace UIChildProtection.Areas.Common.Controllers
         public ActionResult Index()
         {
            
-            var childinfo = objBs.GetALL();
+            var childinfo = objBs.GetALL().Where(x => x.IsApproved == "A");
             return View(childinfo);
         }
         public ActionResult Display(string SortOrder)
