@@ -17,21 +17,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Child_Protection", "Index", "Home", new { area = "Common" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Child Protection", "Index", "Home", new { area = "Common" }, new { @class = "navbar-brand" })
                 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li> @Html.ActionLink("Home", "Index", new { Controller = "Home", area = "Common" })</li>
                         <li> @Html.ActionLink("Create Report", "Index", new { Controller = "SubmitReport", area = "Common" })</li>
                         <li> @Html.ActionLink("Missing Child", "Index", new { Controller = "BrowseMissingChild", area = "Common" })</li>
+                        <li> @Html.ActionLink("Find Child", "Index", new { Controller = "Search", area = "Common" })</li>
 
-                        <li> @Html.ActionLink("Approve", "Index", new { Controller = "ApproveReport", area = "Admin" })</li>
+                        
                         @if (User.Identity.IsAuthenticated)
                         {
-                    
-                       
+
+                        <li> @Html.ActionLink("Approve", "Index", new { Controller = "ApproveReport", area = "Admin" })</li>
                         <li> @Html.ActionLink("Register", "Index", new { Controller = "RegisterUser", area = "Admin" })</li>
                         <li> @Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", area = "Security" })</li>
+                        <li> <a href="#">@User.Identity.Name </a></li>
                         }
                         else
                         {
@@ -53,7 +55,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Child Protection</p>
         </footer>
     </div>
 

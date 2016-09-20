@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ChildProtectionDbModelStoreContainer" CdmEntityContainer="ChildProtectionDbEntities">
-    <EntitySetMapping Name="tbl_ChildInfo">
-      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
-        <MappingFragment StoreEntitySet="tbl_ChildInfo">
-          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
-          <ScalarProperty Name="ChildName" ColumnName="ChildName" />
-          <ScalarProperty Name="ChildAlternativeName" ColumnName="ChildAlternativeName" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
-          <ScalarProperty Name="Sex" ColumnName="Sex" />
-          <ScalarProperty Name="Build" ColumnName="Build" />
-          <ScalarProperty Name="HairColor" ColumnName="HairColor" />
-          <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
-          <ScalarProperty Name="Glases" ColumnName="Glases" />
-          <ScalarProperty Name="IdentityMark" ColumnName="IdentityMark" />
-          <ScalarProperty Name="Shirt" ColumnName="Shirt" />
-          <ScalarProperty Name="Trouser_Skert" ColumnName="Trouser/Skert" />
-          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
-          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbl_User">
       <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_User">
         <MappingFragment StoreEntitySet="tbl_User">
@@ -33,6 +12,40 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ChildInfo">
+      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
+        <MappingFragment StoreEntitySet="tbl_ChildInfo">
+          <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+          <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
+          <ScalarProperty Name="Report_Created_Date_Time" ColumnName="Report_Created_Date_Time" />
+          <ScalarProperty Name="Phone__" ColumnName="Phone_#" />
+          <ScalarProperty Name="Address_Of_Child" ColumnName="Address_Of_Child" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Relation_to_Missing_Child" ColumnName="Relation_to_Missing_Child" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_" ColumnName="Phone#" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
+          <ScalarProperty Name="MissingLocation" ColumnName="MissingLocation" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="Child_Missing_Date_Time" ColumnName="Child_Missing_Date_Time" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+          <ScalarProperty Name="Trouser_Skert" ColumnName="Trouser/Skert" />
+          <ScalarProperty Name="Shirt" ColumnName="Shirt" />
+          <ScalarProperty Name="IdentityMark" ColumnName="IdentityMark" />
+          <ScalarProperty Name="Glasses" ColumnName="Glasses" />
+          <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+          <ScalarProperty Name="HairColor" ColumnName="HairColor" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ChildAlternativeName" ColumnName="ChildAlternativeName" />
+          <ScalarProperty Name="ChildName" ColumnName="ChildName" />
+          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

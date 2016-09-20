@@ -30,5 +30,12 @@ namespace UIChildProtection.Areas.Common.Controllers
             var childinfo = objBs.GetALL().Where(x => x.ChildId == abc);
             return View(childinfo);
         }
+
+
+        public ActionResult Delete(int id)
+        {
+            objBs.Delete(id);
+            return View("Index");
+        }
     }
 }

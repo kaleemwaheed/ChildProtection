@@ -69,7 +69,7 @@
             @Html.DisplayNameFor(model => model.Age)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sex)
+            @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.imageUrl)
@@ -78,7 +78,7 @@
             @Html.DisplayNameFor(model => model.IsApproved)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.MissingLocation)
         </th>
         <th></th>
     </tr>
@@ -99,7 +99,7 @@
             @Html.DisplayFor(modelItem => item.Age)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Sex)
+            @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.imageUrl)
@@ -108,7 +108,7 @@
             @Html.DisplayFor(modelItem => item.IsApproved)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.MissingLocation)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ChildId }) |

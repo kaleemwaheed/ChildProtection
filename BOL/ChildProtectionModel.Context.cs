@@ -25,7 +25,7 @@ namespace BOL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<tbl_ChildInfo> tbl_ChildInfo { get; set; }
         public virtual DbSet<tbl_User> tbl_User { get; set; }
+        public virtual DbSet<tbl_ChildInfo> tbl_ChildInfo { get; set; }
     }
 }

@@ -113,7 +113,8 @@
     <Content Include="Areas\Security\Views\web.config" />
     <Content Include="Areas\Security\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ApproveReport\Index.cshtml" />
-    <Content Include="Areas\Basit\Views\web.config" />
+    <Content Include="Areas\Common\Views\Search\Index.cshtml" />
+    <Content Include="Areas\Common\Views\SubmitReport\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -132,11 +133,12 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ApproveReportController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterUserController.cs" />
-    <Compile Include="Areas\Basit\BasitAreaRegistration.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\BrowseMissingChildController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Common\Controllers\SearchController.cs" />
     <Compile Include="Areas\Common\Controllers\SubmitReportController.cs" />
+    <Compile Include="Areas\Common\Models\OptionList.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
@@ -147,10 +149,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Areas\Common\Views\web.config" />
+    <Content Include="Areas\Common\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Common\Views\SubmitReport\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -164,10 +167,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Login\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Basit\Controllers\" />
-    <Folder Include="Areas\Basit\Models\" />
-    <Folder Include="Areas\Basit\Views\Shared\" />
-    <Folder Include="Areas\Common\Models\" />
+    <Folder Include="Areas\Common\Controllers\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />

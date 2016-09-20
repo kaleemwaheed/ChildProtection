@@ -70,6 +70,7 @@
     <Compile Include="tbl_ChildInfo.cs">
       <DependentUpon>ChildProtectionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_ChildInfoValidation.cs" />
     <Compile Include="tbl_User.cs">
       <DependentUpon>ChildProtectionModel.tt</DependentUpon>
     </Compile>

@@ -13,17 +13,30 @@
           <Property Name="ChildName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ChildAlternativeName" Type="varchar" MaxLength="50" />
           <Property Name="Age" Type="int" />
-          <Property Name="Sex" Type="char" MaxLength="6" />
+          <Property Name="Gender" Type="char" MaxLength="6" />
           <Property Name="Build" Type="char" MaxLength="10" />
           <Property Name="HairColor" Type="char" MaxLength="10" />
           <Property Name="EyeColor" Type="char" MaxLength="10" />
-          <Property Name="Glases" Type="char" MaxLength="3" />
+          <Property Name="Glasses" Type="char" MaxLength="3" />
           <Property Name="IdentityMark" Type="varchar" MaxLength="50" />
           <Property Name="Shirt" Type="varchar" MaxLength="50" />
           <Property Name="Trouser/Skert" Type="varchar" MaxLength="50" />
           <Property Name="imageUrl" Type="nvarchar(max)" />
+          <Property Name="Child_Missing_Date_Time" Type="date" />
           <Property Name="IsApproved" Type="varchar" MaxLength="1" />
-          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="MissingLocation" Type="varchar(max)" />
+          <Property Name="Report_by_Person_Name" Type="varchar" MaxLength="50" />
+          <Property Name="CNIC" Type="bigint" />
+          <Property Name="Address" Type="varchar" MaxLength="150" />
+          <Property Name="Phone#" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Relation_to_Missing_Child" Type="varchar" MaxLength="50" />
+          <Property Name="Father_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Address_Of_Child" Type="varchar" MaxLength="150" />
+          <Property Name="Phone_#" Type="varchar" MaxLength="50" />
+          <Property Name="Report_Created_Date_Time" Type="date" />
+          <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
+          <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbl_User">
           <Key>
@@ -46,29 +59,9 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ChildProtectionDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="tbl_ChildInfo">
-          <Key>
-            <PropertyRef Name="ChildId" />
-          </Key>
-          <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ChildName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ChildAlternativeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="Sex" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Glases" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="IdentityMark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Shirt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Trouser_Skert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="imageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="ChildProtectionDbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" />
           <EntitySet Name="tbl_User" EntityType="ChildProtectionDbModel.tbl_User" />
+          <EntitySet Name="tbl_ChildInfo" EntityType="ChildProtectionDbModel.tbl_ChildInfo" />
         </EntityContainer>
         <EntityType Name="tbl_User">
           <Key>
@@ -83,33 +76,45 @@
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="tbl_ChildInfo">
+          <Key>
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChildName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChildAlternativeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Glasses" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="IdentityMark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shirt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Trouser_Skert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="imageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Child_Missing_Date_Time" Type="DateTime" Precision="0" />
+          <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MissingLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Report_by_Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CNIC" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Relation_to_Missing_Child" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Father_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Of_Child" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Report_Created_Date_Time" Type="DateTime" Precision="0" />
+          <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ChildProtectionDbModelStoreContainer" CdmEntityContainer="ChildProtectionDbEntities">
-          <EntitySetMapping Name="tbl_ChildInfo">
-            <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
-              <MappingFragment StoreEntitySet="tbl_ChildInfo">
-                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
-                <ScalarProperty Name="ChildName" ColumnName="ChildName" />
-                <ScalarProperty Name="ChildAlternativeName" ColumnName="ChildAlternativeName" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="Build" ColumnName="Build" />
-                <ScalarProperty Name="HairColor" ColumnName="HairColor" />
-                <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
-                <ScalarProperty Name="Glases" ColumnName="Glases" />
-                <ScalarProperty Name="IdentityMark" ColumnName="IdentityMark" />
-                <ScalarProperty Name="Shirt" ColumnName="Shirt" />
-                <ScalarProperty Name="Trouser_Skert" ColumnName="Trouser/Skert" />
-                <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_User">
             <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_User">
               <MappingFragment StoreEntitySet="tbl_User">
@@ -121,6 +126,40 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ChildInfo">
+            <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
+              <MappingFragment StoreEntitySet="tbl_ChildInfo">
+                <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+                <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
+                <ScalarProperty Name="Report_Created_Date_Time" ColumnName="Report_Created_Date_Time" />
+                <ScalarProperty Name="Phone__" ColumnName="Phone_#" />
+                <ScalarProperty Name="Address_Of_Child" ColumnName="Address_Of_Child" />
+                <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+                <ScalarProperty Name="Relation_to_Missing_Child" ColumnName="Relation_to_Missing_Child" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_" ColumnName="Phone#" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
+                <ScalarProperty Name="MissingLocation" ColumnName="MissingLocation" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Child_Missing_Date_Time" ColumnName="Child_Missing_Date_Time" />
+                <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+                <ScalarProperty Name="Trouser_Skert" ColumnName="Trouser/Skert" />
+                <ScalarProperty Name="Shirt" ColumnName="Shirt" />
+                <ScalarProperty Name="IdentityMark" ColumnName="IdentityMark" />
+                <ScalarProperty Name="Glasses" ColumnName="Glasses" />
+                <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+                <ScalarProperty Name="HairColor" ColumnName="HairColor" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="ChildAlternativeName" ColumnName="ChildAlternativeName" />
+                <ScalarProperty Name="ChildName" ColumnName="ChildName" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
