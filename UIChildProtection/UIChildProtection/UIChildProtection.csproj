@@ -115,6 +115,8 @@
     <Content Include="Areas\Admin\Views\ApproveReport\Index.cshtml" />
     <Content Include="Areas\Common\Views\Search\Index.cshtml" />
     <Content Include="Areas\Common\Views\SubmitReport\Index.cshtml" />
+    <Content Include="Areas\Common\Views\Search\Find.cshtml" />
+    <Content Include="Areas\Common\Views\SuspectInformation\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -138,6 +140,7 @@
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
     <Compile Include="Areas\Common\Controllers\SearchController.cs" />
     <Compile Include="Areas\Common\Controllers\SubmitReportController.cs" />
+    <Compile Include="Areas\Common\Controllers\SuspectInformationController.cs" />
     <Compile Include="Areas\Common\Models\OptionList.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />

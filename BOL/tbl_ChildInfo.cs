@@ -11,12 +11,10 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class tbl_ChildInfo
     {
         public int ChildId { get; set; }
-        [Required]
         public string ChildName { get; set; }
         public string ChildAlternativeName { get; set; }
         public Nullable<int> Age { get; set; }
@@ -26,12 +24,14 @@ namespace BOL
         public string EyeColor { get; set; }
         public string Glasses { get; set; }
         public string IdentityMark { get; set; }
+        public string IdentificationMarkOnBody { get; set; }
         public string Shirt { get; set; }
         public string Trouser_Skert { get; set; }
         public string imageUrl { get; set; }
         public Nullable<System.DateTime> Child_Missing_Date_Time { get; set; }
         public string IsApproved { get; set; }
-        public string MissingLocation { get; set; }
+        public string Province { get; set; }
+        public string City { get; set; }
         public string Report_by_Person_Name { get; set; }
         public Nullable<long> CNIC { get; set; }
         public string Address { get; set; }
@@ -44,5 +44,6 @@ namespace BOL
         public Nullable<System.DateTime> Report_Created_Date_Time { get; set; }
         public string PoliceStationEmail { get; set; }
         public string PoliceStation { get; set; }
+        public string ChildMissingLocation { get; set; }
     }
 }

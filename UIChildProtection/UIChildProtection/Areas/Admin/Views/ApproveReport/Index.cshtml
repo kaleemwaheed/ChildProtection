@@ -78,7 +78,7 @@
             @Html.DisplayNameFor(model => model.IsApproved)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MissingLocation)
+            @Html.DisplayNameFor(model => model.City)
         </th>
         <th></th>
     </tr>
@@ -108,7 +108,7 @@
             @Html.DisplayFor(modelItem => item.IsApproved)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MissingLocation)
+            @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ChildId }) |

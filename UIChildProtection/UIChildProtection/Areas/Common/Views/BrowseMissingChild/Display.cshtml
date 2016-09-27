@@ -4,7 +4,32 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .rotate90 {
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }  
+     .rotate-90 {
+         -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    /*-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
 
+</style>
+<script>
+    function toggle(e1) {
+        e1.className = "rotate90";
+    }
+    function toggle2(e1) {
+        e1.className = "rotate-90";
+    }
+</script>
 
 <h2>Detail </h2>
 <div class="table-responsive">
@@ -63,8 +88,8 @@
                         <img src="~/images/@Html.DisplayFor(modelItem => item.imageUrl)" width="100" height="100" />*@
 
 
-                    <a href="@Url.Action("Display", "BrowseMissingChild"  ,new {SortOrder =item.ChildId })" class="links">
-                        <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" style="max-width: 100%; height: auto;" )">
+                    <a href="@Url.Action("Display", "BrowseMissingChild"  ,new {SortOrder =item.ChildId })" >
+                        <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" style="max-width: 50%; height: auto;" onmouseover="toggle(this)"  onmouseout="toggle2(this)">
                     </a>
                     @*</a>*@
 
@@ -140,7 +165,7 @@
             <tr>
                 <td>
                     <h6 class="control-label col-md-2">Missing Location</h6>
-                    @Html.DisplayFor(modelItem => item.MissingLocation)
+                    @Html.DisplayFor(modelItem => item.City)
                 </td>
 
             </tr>

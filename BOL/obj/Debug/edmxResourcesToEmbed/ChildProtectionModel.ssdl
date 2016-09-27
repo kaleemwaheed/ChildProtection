@@ -13,13 +13,15 @@
     <Property Name="HairColor" Type="char" MaxLength="10" />
     <Property Name="EyeColor" Type="char" MaxLength="10" />
     <Property Name="Glasses" Type="char" MaxLength="3" />
-    <Property Name="IdentityMark" Type="varchar" MaxLength="50" />
-    <Property Name="Shirt" Type="varchar" MaxLength="50" />
-    <Property Name="Trouser/Skert" Type="varchar" MaxLength="50" />
+    <Property Name="IdentityMark" Type="varchar" MaxLength="10" />
+    <Property Name="IdentificationMarkOnBody" Type="varchar" MaxLength="15" />
+    <Property Name="Shirt" Type="varchar" MaxLength="12" />
+    <Property Name="Trouser/Skert" Type="varchar" MaxLength="12" />
     <Property Name="imageUrl" Type="nvarchar(max)" />
     <Property Name="Child_Missing_Date_Time" Type="date" />
     <Property Name="IsApproved" Type="varchar" MaxLength="1" />
-    <Property Name="MissingLocation" Type="varchar(max)" />
+    <Property Name="Province" Type="varchar(max)" />
+    <Property Name="City" Type="varchar(max)" />
     <Property Name="Report_by_Person_Name" Type="varchar" MaxLength="50" />
     <Property Name="CNIC" Type="bigint" />
     <Property Name="Address" Type="varchar" MaxLength="150" />
@@ -32,6 +34,27 @@
     <Property Name="Report_Created_Date_Time" Type="date" />
     <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
     <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+    <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbl_SuspectPersonInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="6" />
+    <Property Name="Build" Type="char" MaxLength="10" />
+    <Property Name="Height" Type="int" />
+    <Property Name="HairColor" Type="char" MaxLength="10" />
+    <Property Name="EyeColor" Type="char" MaxLength="10" />
+    <Property Name="Complexion" Type="char" MaxLength="10" />
+    <Property Name="Glasses" Type="char" MaxLength="3" />
+    <Property Name="Beard" Type="char" MaxLength="3" />
+    <Property Name="Mustache" Type="char" MaxLength="3" />
+    <Property Name="Crime_Date_Time" Type="date" />
+    <Property Name="InformationAboutCrime" Type="varchar(max)" />
+    <Property Name="NearestPoliceStation" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tbl_User">
     <Key>
@@ -48,6 +71,7 @@
   </EntityType>
   <EntityContainer Name="ChildProtectionDbModelStoreContainer">
     <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SuspectPersonInformation" EntityType="Self.tbl_SuspectPersonInformation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -18,13 +18,15 @@
           <Property Name="HairColor" Type="char" MaxLength="10" />
           <Property Name="EyeColor" Type="char" MaxLength="10" />
           <Property Name="Glasses" Type="char" MaxLength="3" />
-          <Property Name="IdentityMark" Type="varchar" MaxLength="50" />
-          <Property Name="Shirt" Type="varchar" MaxLength="50" />
-          <Property Name="Trouser/Skert" Type="varchar" MaxLength="50" />
+          <Property Name="IdentityMark" Type="varchar" MaxLength="10" />
+          <Property Name="IdentificationMarkOnBody" Type="varchar" MaxLength="15" />
+          <Property Name="Shirt" Type="varchar" MaxLength="12" />
+          <Property Name="Trouser/Skert" Type="varchar" MaxLength="12" />
           <Property Name="imageUrl" Type="nvarchar(max)" />
           <Property Name="Child_Missing_Date_Time" Type="date" />
           <Property Name="IsApproved" Type="varchar" MaxLength="1" />
-          <Property Name="MissingLocation" Type="varchar(max)" />
+          <Property Name="Province" Type="varchar(max)" />
+          <Property Name="City" Type="varchar(max)" />
           <Property Name="Report_by_Person_Name" Type="varchar" MaxLength="50" />
           <Property Name="CNIC" Type="bigint" />
           <Property Name="Address" Type="varchar" MaxLength="150" />
@@ -37,6 +39,27 @@
           <Property Name="Report_Created_Date_Time" Type="date" />
           <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
           <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+          <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tbl_SuspectPersonInformation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="char" MaxLength="6" />
+          <Property Name="Build" Type="char" MaxLength="10" />
+          <Property Name="Height" Type="int" />
+          <Property Name="HairColor" Type="char" MaxLength="10" />
+          <Property Name="EyeColor" Type="char" MaxLength="10" />
+          <Property Name="Complexion" Type="char" MaxLength="10" />
+          <Property Name="Glasses" Type="char" MaxLength="3" />
+          <Property Name="Beard" Type="char" MaxLength="3" />
+          <Property Name="Mustache" Type="char" MaxLength="3" />
+          <Property Name="Crime_Date_Time" Type="date" />
+          <Property Name="InformationAboutCrime" Type="varchar(max)" />
+          <Property Name="NearestPoliceStation" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbl_User">
           <Key>
@@ -53,6 +76,7 @@
         </EntityType>
         <EntityContainer Name="ChildProtectionDbModelStoreContainer">
           <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SuspectPersonInformation" EntityType="Self.tbl_SuspectPersonInformation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -61,6 +85,7 @@
       <Schema Namespace="ChildProtectionDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ChildProtectionDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_User" EntityType="ChildProtectionDbModel.tbl_User" />
+          <EntitySet Name="tbl_SuspectPersonInformation" EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" />
           <EntitySet Name="tbl_ChildInfo" EntityType="ChildProtectionDbModel.tbl_ChildInfo" />
         </EntityContainer>
         <EntityType Name="tbl_User">
@@ -76,6 +101,26 @@
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="tbl_SuspectPersonInformation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Complexion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Glasses" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Beard" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Mustache" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="Crime_Date_Time" Type="DateTime" Precision="0" />
+          <Property Name="InformationAboutCrime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NearestPoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="tbl_ChildInfo">
           <Key>
             <PropertyRef Name="ChildId" />
@@ -89,13 +134,15 @@
           <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="Glasses" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="IdentityMark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Shirt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Trouser_Skert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdentityMark" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IdentificationMarkOnBody" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Shirt" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Trouser_Skert" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="imageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Child_Missing_Date_Time" Type="DateTime" Precision="0" />
           <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="MissingLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Province" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Report_by_Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CNIC" Type="Int64" />
           <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -108,6 +155,7 @@
           <Property Name="Report_Created_Date_Time" Type="DateTime" Precision="0" />
           <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChildMissingLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -129,9 +177,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SuspectPersonInformation">
+            <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_SuspectPersonInformation">
+              <MappingFragment StoreEntitySet="tbl_SuspectPersonInformation">
+                <ScalarProperty Name="NearestPoliceStation" ColumnName="NearestPoliceStation" />
+                <ScalarProperty Name="InformationAboutCrime" ColumnName="InformationAboutCrime" />
+                <ScalarProperty Name="Crime_Date_Time" ColumnName="Crime_Date_Time" />
+                <ScalarProperty Name="Mustache" ColumnName="Mustache" />
+                <ScalarProperty Name="Beard" ColumnName="Beard" />
+                <ScalarProperty Name="Glasses" ColumnName="Glasses" />
+                <ScalarProperty Name="Complexion" ColumnName="Complexion" />
+                <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+                <ScalarProperty Name="HairColor" ColumnName="HairColor" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_ChildInfo">
             <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
               <MappingFragment StoreEntitySet="tbl_ChildInfo">
+                <ScalarProperty Name="ChildMissingLocation" ColumnName="ChildMissingLocation" />
                 <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
                 <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
                 <ScalarProperty Name="Report_Created_Date_Time" ColumnName="Report_Created_Date_Time" />
@@ -144,12 +214,14 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="CNIC" ColumnName="CNIC" />
                 <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
-                <ScalarProperty Name="MissingLocation" ColumnName="MissingLocation" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
                 <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="Child_Missing_Date_Time" ColumnName="Child_Missing_Date_Time" />
                 <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
                 <ScalarProperty Name="Trouser_Skert" ColumnName="Trouser/Skert" />
                 <ScalarProperty Name="Shirt" ColumnName="Shirt" />
+                <ScalarProperty Name="IdentificationMarkOnBody" ColumnName="IdentificationMarkOnBody" />
                 <ScalarProperty Name="IdentityMark" ColumnName="IdentityMark" />
                 <ScalarProperty Name="Glasses" ColumnName="Glasses" />
                 <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />

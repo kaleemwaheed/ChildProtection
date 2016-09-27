@@ -15,9 +15,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SuspectPersonInformation">
+      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_SuspectPersonInformation">
+        <MappingFragment StoreEntitySet="tbl_SuspectPersonInformation">
+          <ScalarProperty Name="NearestPoliceStation" ColumnName="NearestPoliceStation" />
+          <ScalarProperty Name="InformationAboutCrime" ColumnName="InformationAboutCrime" />
+          <ScalarProperty Name="Crime_Date_Time" ColumnName="Crime_Date_Time" />
+          <ScalarProperty Name="Mustache" ColumnName="Mustache" />
+          <ScalarProperty Name="Beard" ColumnName="Beard" />
+          <ScalarProperty Name="Glasses" ColumnName="Glasses" />
+          <ScalarProperty Name="Complexion" ColumnName="Complexion" />
+          <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+          <ScalarProperty Name="HairColor" ColumnName="HairColor" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_ChildInfo">
       <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
         <MappingFragment StoreEntitySet="tbl_ChildInfo">
+          <ScalarProperty Name="ChildMissingLocation" ColumnName="ChildMissingLocation" />
           <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
           <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
           <ScalarProperty Name="Report_Created_Date_Time" ColumnName="Report_Created_Date_Time" />
@@ -30,12 +52,14 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="CNIC" ColumnName="CNIC" />
           <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
-          <ScalarProperty Name="MissingLocation" ColumnName="MissingLocation" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
           <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
           <ScalarProperty Name="Child_Missing_Date_Time" ColumnName="Child_Missing_Date_Time" />
           <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
           <ScalarProperty Name="Trouser_Skert" ColumnName="Trouser/Skert" />
           <ScalarProperty Name="Shirt" ColumnName="Shirt" />
+          <ScalarProperty Name="IdentificationMarkOnBody" ColumnName="IdentificationMarkOnBody" />
           <ScalarProperty Name="IdentityMark" ColumnName="IdentityMark" />
           <ScalarProperty Name="Glasses" ColumnName="Glasses" />
           <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
