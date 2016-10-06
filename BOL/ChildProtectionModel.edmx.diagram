@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4b7939196ef24907b50714b29cf25ec5" Name="Diagram1" ZoomLevel="52">
+      <Diagram DiagramId="4b7939196ef24907b50714b29cf25ec5" Name="Diagram1" ZoomLevel="59">
         <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_User" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_ChildInfo" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

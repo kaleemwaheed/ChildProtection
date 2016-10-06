@@ -41,3 +41,9 @@ C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProte
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\EntityFramework.SqlServer.xml
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\DAL.dll
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\DAL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\AForge.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\AForge.Imaging.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\AForge.Math.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\AForge.xml
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\AForge.Imaging.xml
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\UIChildProtection\UIChildProtection\bin\AForge.Math.xml

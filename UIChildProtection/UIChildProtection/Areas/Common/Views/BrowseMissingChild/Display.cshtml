@@ -19,6 +19,13 @@
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+       .rotate-180 {
+         -moz-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
     /*-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
 
 </style>
@@ -28,6 +35,9 @@
     }
     function toggle2(e1) {
         e1.className = "rotate-90";
+    }
+    function toggle3(e1) {
+        e1.className = "rotate-180";
     }
 </script>
 
@@ -89,7 +99,7 @@
 
 
                     <a href="@Url.Action("Display", "BrowseMissingChild"  ,new {SortOrder =item.ChildId })" >
-                        <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" style="max-width: 50%; height: auto;" onmouseover="toggle(this)"  onmouseout="toggle2(this)">
+                        <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" style="max-width: 100%; height: auto;" onclick="toggle3(this)" onmouseover="toggle(this)"  onmouseout="toggle2(this)">
                     </a>
                     @*</a>*@
 

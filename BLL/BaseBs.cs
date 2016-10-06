@@ -9,11 +9,16 @@ namespace BLL
     public class BaseBs
     {
         public ChildInfoBs childInfoBs { get; set; }
-        public UserBs userBs { get; set; }
-        
+        public UserBs userBs { get; set; } 
+        public SuspectPersonInformationBs suspectPersonInformationBs { get; set; }
+
+
         public BaseBs()
         {
             childInfoBs = new ChildInfoBs();
-            userBs = new UserBs();        }
+            userBs = new UserBs();
+            suspectPersonInformationBs = new SuspectPersonInformationBs();
+
+        }
     }
 }

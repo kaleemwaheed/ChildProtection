@@ -15,27 +15,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_SuspectPersonInformation">
-      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_SuspectPersonInformation">
-        <MappingFragment StoreEntitySet="tbl_SuspectPersonInformation">
-          <ScalarProperty Name="NearestPoliceStation" ColumnName="NearestPoliceStation" />
-          <ScalarProperty Name="InformationAboutCrime" ColumnName="InformationAboutCrime" />
-          <ScalarProperty Name="Crime_Date_Time" ColumnName="Crime_Date_Time" />
-          <ScalarProperty Name="Mustache" ColumnName="Mustache" />
-          <ScalarProperty Name="Beard" ColumnName="Beard" />
-          <ScalarProperty Name="Glasses" ColumnName="Glasses" />
-          <ScalarProperty Name="Complexion" ColumnName="Complexion" />
-          <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
-          <ScalarProperty Name="HairColor" ColumnName="HairColor" />
-          <ScalarProperty Name="Height" ColumnName="Height" />
-          <ScalarProperty Name="Build" ColumnName="Build" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbl_ChildInfo">
       <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ChildInfo">
         <MappingFragment StoreEntitySet="tbl_ChildInfo">
@@ -70,6 +49,27 @@
           <ScalarProperty Name="ChildAlternativeName" ColumnName="ChildAlternativeName" />
           <ScalarProperty Name="ChildName" ColumnName="ChildName" />
           <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SuspectPersonInformation">
+      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_SuspectPersonInformation">
+        <MappingFragment StoreEntitySet="tbl_SuspectPersonInformation">
+          <ScalarProperty Name="NearestPoliceStation" ColumnName="NearestPoliceStation" />
+          <ScalarProperty Name="InformationAboutCrime" ColumnName="InformationAboutCrime" />
+          <ScalarProperty Name="Crime_Date_Time" ColumnName="Crime_Date_Time" />
+          <ScalarProperty Name="Mustache" ColumnName="Mustache" />
+          <ScalarProperty Name="Beard" ColumnName="Beard" />
+          <ScalarProperty Name="Glasses" ColumnName="Glasses" />
+          <ScalarProperty Name="Complexion" ColumnName="Complexion" />
+          <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+          <ScalarProperty Name="HairColor" ColumnName="HairColor" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using BOL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,12 @@ namespace UIChildProtection.Areas.Common.Controllers
     public class SuspectInformationController : Controller
     {
         // GET: Common/SuspectInformation
+
+        private SuspectPersonInformationBs objSuspectInformation;
+        public SuspectInformationController()
+        {
+            objSuspectInformation = new SuspectPersonInformationBs();
+        }
         public ActionResult Index()
         {
 
@@ -45,12 +53,11 @@ namespace UIChildProtection.Areas.Common.Controllers
             hairColour.Add(new SelectListItem { Text = "No hair", Value = "No hair" });
             ViewBag.Haircolour = hairColour;
 
-
-            List<SelectListItem> glasses = new List<SelectListItem>();
-            glasses.Add(new SelectListItem { Text = "Select", Value = "Select" });
-            glasses.Add(new SelectListItem { Text = "No", Value = "No " });
-            glasses.Add(new SelectListItem { Text = "Yes", Value = "Yes" });
-            ViewBag.Glasses = glasses;
+            List<SelectListItem> yesno = new List<SelectListItem>();
+            yesno.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            yesno.Add(new SelectListItem { Text = "No", Value = "No " });
+            yesno.Add(new SelectListItem { Text = "Yes", Value = "Yes" });
+            ViewBag.Yesno = yesno;
 
 
             List<SelectListItem> identityMark = new List<SelectListItem>();
@@ -92,10 +99,36 @@ namespace UIChildProtection.Areas.Common.Controllers
             ViewBag.Colour = Colour;
 
 
+            List<SelectListItem> complexion = new List<SelectListItem>();
+            complexion.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            complexion.Add(new SelectListItem { Text = "Sallow", Value = "Sallow" });
+            complexion.Add(new SelectListItem { Text = "Olive", Value = "Olive" });
+            complexion.Add(new SelectListItem { Text = "Yellow", Value = "Yellow" });
+            complexion.Add(new SelectListItem { Text = "Pale", Value = "Pale" });
+            complexion.Add(new SelectListItem { Text = "Dark", Value = "Dark" });
 
-
+            ViewBag.Complexion = complexion;
 
             return View();
         }
+        [HttpPost]
+        public ActionResult index(tbl_SuspectPersonInformation obj)
+        {
+
+            if (ModelState.IsValid)
+            {
+                objSuspectInformation.Insert(obj);
+                TempData["Msg"] = "Submit Successfully";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["Msg"] = "Failed";
+                return RedirectToAction("Index");
+
+            }
+        }
+
+
     }
 }

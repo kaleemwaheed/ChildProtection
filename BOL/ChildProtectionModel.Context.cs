@@ -26,7 +26,7 @@ namespace BOL
         }
     
         public virtual DbSet<tbl_User> tbl_User { get; set; }
-        public virtual DbSet<tbl_SuspectPersonInformation> tbl_SuspectPersonInformation { get; set; }
         public virtual DbSet<tbl_ChildInfo> tbl_ChildInfo { get; set; }
+        public virtual DbSet<tbl_SuspectPersonInformation> tbl_SuspectPersonInformation { get; set; }
     }
 }

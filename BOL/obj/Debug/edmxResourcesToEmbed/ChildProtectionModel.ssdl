@@ -52,7 +52,7 @@
     <Property Name="Glasses" Type="char" MaxLength="3" />
     <Property Name="Beard" Type="char" MaxLength="3" />
     <Property Name="Mustache" Type="char" MaxLength="3" />
-    <Property Name="Crime_Date_Time" Type="date" />
+    <Property Name="Crime_Date_Time" Type="datetime" />
     <Property Name="InformationAboutCrime" Type="varchar(max)" />
     <Property Name="NearestPoliceStation" Type="varchar" MaxLength="50" />
   </EntityType>

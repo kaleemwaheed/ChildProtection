@@ -2,8 +2,8 @@
 <Schema Namespace="ChildProtectionDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="ChildProtectionDbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tbl_User" EntityType="ChildProtectionDbModel.tbl_User" />
-    <EntitySet Name="tbl_SuspectPersonInformation" EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" />
     <EntitySet Name="tbl_ChildInfo" EntityType="ChildProtectionDbModel.tbl_ChildInfo" />
+    <EntitySet Name="tbl_SuspectPersonInformation" EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" />
   </EntityContainer>
   <EntityType Name="tbl_User">
     <Key>
@@ -17,26 +17,6 @@
     <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="tbl_SuspectPersonInformation">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Age" Type="Int32" />
-    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-    <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="Height" Type="Int32" />
-    <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="Complexion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="Glasses" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="Beard" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="Mustache" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="Crime_Date_Time" Type="DateTime" Precision="0" />
-    <Property Name="InformationAboutCrime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="NearestPoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="tbl_ChildInfo">
     <Key>
@@ -73,5 +53,25 @@
     <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ChildMissingLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_SuspectPersonInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Height" Type="Int32" />
+    <Property Name="HairColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="EyeColor" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Complexion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Glasses" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Beard" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Mustache" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Crime_Date_Time" Type="DateTime" Precision="3" />
+    <Property Name="InformationAboutCrime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NearestPoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

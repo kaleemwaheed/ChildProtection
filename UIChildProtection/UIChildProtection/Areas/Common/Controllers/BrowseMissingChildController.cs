@@ -32,6 +32,17 @@ namespace UIChildProtection.Areas.Common.Controllers
         }
 
 
+
+        public ActionResult DisplaySearch(string SortOrder)
+        {
+            //ViewBag.SortOrder = SortOrder;
+            //int abc = Convert.ToInt32(SortOrder);
+
+            var childinfo = objBs.GetALL().Where(x => x.imageUrl == SortOrder);
+            return View(childinfo);
+        }
+
+
         public ActionResult Delete(int id)
         {
             objBs.Delete(id);

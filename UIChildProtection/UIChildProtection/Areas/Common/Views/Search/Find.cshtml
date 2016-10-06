@@ -41,3 +41,42 @@
     </div>
 
 }
+
+
+
+
+
+@{
+    String location2;
+    foreach (var item in ViewBag.List)
+    {
+
+        string[] parts = item.Split('\\');
+        for (int i = parts.Count() - 1; i < parts.Count(); i++)
+        {
+            @*<a href="/BrowseMissingChild/Display">
+                <img src="~/images/@Html.DisplayFor(modelItem => item.imageUrl)" width="100" height="100" />*@
+
+
+
+            @*<img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl)" style="max-width: 100%; height: auto;" onclick="toggle3(this)" onmouseover="toggle(this)" onmouseout="toggle2(this)">*@
+string location = "~/images/" + parts[i];
+location2 = parts[i];
+
+
+
+
+
+        <a href="@Url.Action("DisplaySearch", "BrowseMissingChild"  ,new {SortOrder =@location2})" class="links">
+
+
+    <img alt="" src="~/images/@location2" style="max-width: 100%; height: auto;" onclick="toggle3(this)" onmouseover="toggle(this)" onmouseout="toggle2(this)">
+            </a>
+    }
+    @*</a>*@
+
+
+    }
+
+
+    }

@@ -67,8 +67,11 @@ namespace UIChildProtection.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
         }
+        public ActionResult Delete(int id)
+        {
+            objBs.Delete(id);
+            return RedirectToAction("Index");
 
-
-
+        }
     }
 }
