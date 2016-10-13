@@ -21,7 +21,17 @@
                 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li> @Html.ActionLink("Home", "Index", new { Controller = "Home", area = "Common" })</li>
+                         
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> @Html.ActionLink("Dashboard", "Index", new { Controller = "Dashboard", area = "Admin" })</li>
+                        }
+                        else
+                        {
+                            <li> @Html.ActionLink("Home", "Index", new { Controller = "Home", area = "Common" })</li>
+                        }
+
+                        
                         <li> @Html.ActionLink("Create Report", "Index", new { Controller = "SubmitReport", area = "Common" })</li>
                         <li> @Html.ActionLink("Missing Child", "Index", new { Controller = "BrowseMissingChild", area = "Common" })</li>
                         <li> @Html.ActionLink("Find Child", "Index", new { Controller = "Search", area = "Common" })</li>

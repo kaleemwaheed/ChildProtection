@@ -88,10 +88,10 @@ namespace UIChildProtection.Areas.Common.Controllers
  
 
             List<SelectListItem> Colour = new List<SelectListItem>();
+            Colour.Add(new SelectListItem { Text = "blue", Value = "blue" });
             Colour.Add(new SelectListItem { Text = "black", Value = "black" });
             Colour.Add(new SelectListItem { Text = "brown", Value = "brown" });
             Colour.Add(new SelectListItem { Text = "gray", Value = "gray" });
-            Colour.Add(new SelectListItem { Text = "blue", Value = "blue" });
             Colour.Add(new SelectListItem { Text = "hazel", Value = "hazel" });
             Colour.Add(new SelectListItem { Text = "pink", Value = "pink" });
             Colour.Add(new SelectListItem { Text = "purple", Value = "purple" });

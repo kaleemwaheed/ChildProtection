@@ -8,7 +8,8 @@ using System.Web.Mvc;
 
 namespace UIChildProtection.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "A")]
+
     public class RegisterUserController : Controller
     {
 
@@ -20,6 +21,11 @@ namespace UIChildProtection.Areas.Admin.Controllers
         }
         public ActionResult Index()
         {
+
+            //List<SelectListItem> roleuser = new List<SelectListItem>();
+            //roleuser.Add(new SelectListItem { Text = "User", Value = "U" });
+            //roleuser.Add(new SelectListItem { Text = "Admin  ", Value = "A  " });
+            //ViewBag.Role = roleuser;
             return View();
         }
         [HttpPost]

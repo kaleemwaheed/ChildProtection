@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    if (User.IsInRole("A") || User.IsInRole("U"))
+    {
+        <a href="@Url.Action("Index", "BrowseMissingChild", new { area = "Common" })" class="links">
+            <img alt="Missing Child" src="~/imgIcons/missingchildicon.jpg" style="max-width: 100%; height: auto;" width="150" height="200">
+        </a>
+    }
+
+
+    if (User.IsInRole("A"))
+    {
+
+<a href="@Url.Action("Index", "RegisterUser", new { area = "Admin" })" class="links">
+    <img alt="" src="~/imgIcons/RegisterAccount.png" style="max-width: 100%; height: auto;" width="150" height="200">
+</a>
+
+<a href="@Url.Action("Index", "ApproveReport", new { area = "Admin" })" class="links">
+    <img alt="" src="~/imgIcons/approvereport.png" style="max-width: 100%; height: auto;" width="150" height="200">
+</a>
+
+
+<a href="@Url.Action("Index", "SuspectInformation", new { area = "Admin" })" class="links">
+    <img alt="" src="~/imgIcons/suspectinformation.jpg" style="max-width: 100%; height: auto;" width="150" height="200">
+</a>
+
+    }
+
+}
+else
+{
+
+
+}

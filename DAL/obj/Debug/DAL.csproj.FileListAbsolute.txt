@@ -1,9 +1,9 @@
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\DAL.dll
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\DAL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\BOL.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\BOL.pdb
+C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\EntityFramework.xml
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\obj\Debug\DAL.dll
 C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\obj\Debug\DAL.pdb
-C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\BOL.dll
-C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\BOL.pdb
-C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\EntityFramework.dll
-C:\Users\Your\Documents\Visual Studio 2015\Projects\ChildProtection\DAL\bin\Debug\EntityFramework.xml

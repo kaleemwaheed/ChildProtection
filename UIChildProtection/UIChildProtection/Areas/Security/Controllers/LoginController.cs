@@ -23,11 +23,11 @@ namespace UIChildProtection.Areas.Security.Controllers
                 if (Membership.ValidateUser(user.UserEmail, user.Password))
                 {
                     FormsAuthentication.SetAuthCookie(user.UserEmail, false);
-                    return RedirectToAction("Index", "Home", new { area = "Common" });
+                    return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
                 }
                 else
                 {
-                    TempData["Msg"] = "Login Failed  ";
+                    TempData["Msg"] = "Login Failed Check Password or Email  ";
                     return View("Index");
                 }
             }catch(Exception e1)

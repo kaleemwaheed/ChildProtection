@@ -10,7 +10,7 @@
             <PropertyRef Name="ChildId" />
           </Key>
           <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ChildName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ChildName" Type="varchar" MaxLength="50" />
           <Property Name="ChildAlternativeName" Type="varchar" MaxLength="50" />
           <Property Name="Age" Type="int" />
           <Property Name="Gender" Type="char" MaxLength="6" />
@@ -23,7 +23,7 @@
           <Property Name="Shirt" Type="varchar" MaxLength="12" />
           <Property Name="Trouser/Skert" Type="varchar" MaxLength="12" />
           <Property Name="imageUrl" Type="nvarchar(max)" />
-          <Property Name="Child_Missing_Date_Time" Type="date" />
+          <Property Name="Child_Missing_Date_Time" Type="datetime" />
           <Property Name="IsApproved" Type="varchar" MaxLength="1" />
           <Property Name="Province" Type="varchar(max)" />
           <Property Name="City" Type="varchar(max)" />
@@ -36,7 +36,7 @@
           <Property Name="Father_Name" Type="varchar" MaxLength="50" />
           <Property Name="Address_Of_Child" Type="varchar" MaxLength="150" />
           <Property Name="Phone_#" Type="varchar" MaxLength="50" />
-          <Property Name="Report_Created_Date_Time" Type="date" />
+          <Property Name="Report_Created_Date_Time" Type="datetime" />
           <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
           <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
           <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
@@ -46,7 +46,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Age" Type="int" />
           <Property Name="Gender" Type="char" MaxLength="6" />
           <Property Name="Build" Type="char" MaxLength="10" />
@@ -106,7 +106,7 @@
             <PropertyRef Name="ChildId" />
           </Key>
           <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ChildName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChildName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ChildAlternativeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" />
           <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
@@ -119,7 +119,7 @@
           <Property Name="Shirt" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="Trouser_Skert" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="imageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Child_Missing_Date_Time" Type="DateTime" Precision="0" />
+          <Property Name="Child_Missing_Date_Time" Type="DateTime" Precision="3" />
           <Property Name="IsApproved" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Province" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -132,7 +132,7 @@
           <Property Name="Father_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Address_Of_Child" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Phone__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Report_Created_Date_Time" Type="DateTime" Precision="0" />
+          <Property Name="Report_Created_Date_Time" Type="DateTime" Precision="3" />
           <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ChildMissingLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -142,7 +142,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" />
           <Property Name="Gender" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
           <Property Name="Build" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />

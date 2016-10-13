@@ -18,7 +18,7 @@ namespace BOL
                 int count = db.tbl_User.Where(x => x.UserEmail == userEmailValue).ToList().Count();
 
                 if (count != 0)
-                    return new ValidationResult("User Already Exist With This Email ID");
+                    return new ValidationResult("User Exist");
                 return ValidationResult.Success;
             }
             else
@@ -40,6 +40,7 @@ namespace BOL
         public string Password { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
@@ -52,6 +53,9 @@ namespace BOL
         [Required]
         public string Location { get; set; }
         [Required]
+        [MaxLength(11)]
+        [MinLength(11)]
+        [Range(typeof(Int64), "03000000000", "09999999999", ErrorMessage = "Must be 03XX1234567 characters long.")]
         public string PhoneNumber { get; set; }
     }
     [MetadataType(typeof(tbl_UserValidation))]

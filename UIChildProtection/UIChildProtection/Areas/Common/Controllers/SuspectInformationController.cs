@@ -21,13 +21,12 @@ namespace UIChildProtection.Areas.Common.Controllers
         {
 
             List<SelectListItem> gender = new List<SelectListItem>();
-            gender.Add(new SelectListItem { Text = "Select", Value = "Select" });
             gender.Add(new SelectListItem { Text = "Male  ", Value = "Male  " });
             gender.Add(new SelectListItem { Text = "Female", Value = "Female" });
             ViewBag.Gender = gender;
 
             List<SelectListItem> build = new List<SelectListItem>();
-            build.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            build.Add(new SelectListItem { Text = "Select", Value = "No" });
             build.Add(new SelectListItem { Text = "Slim", Value = "Slim      " });
             build.Add(new SelectListItem { Text = "Fat", Value = "Fat       " });
             build.Add(new SelectListItem { Text = "Stocky", Value = "Stocky    " });
@@ -36,7 +35,7 @@ namespace UIChildProtection.Areas.Common.Controllers
             ViewBag.Build = build;
 
             List<SelectListItem> eyeColour = new List<SelectListItem>();
-            eyeColour.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            eyeColour.Add(new SelectListItem { Text = "Select", Value = "No" });
             eyeColour.Add(new SelectListItem { Text = "black", Value = "black     " });
             eyeColour.Add(new SelectListItem { Text = "brown", Value = "brown     " });
             eyeColour.Add(new SelectListItem { Text = "gray", Value = "gray      " });
@@ -45,7 +44,7 @@ namespace UIChildProtection.Areas.Common.Controllers
             ViewBag.EyeColour = eyeColour;
 
             List<SelectListItem> hairColour = new List<SelectListItem>();
-            hairColour.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            hairColour.Add(new SelectListItem { Text = "Select", Value = "No" });
             hairColour.Add(new SelectListItem { Text = "black", Value = "black     " });
             hairColour.Add(new SelectListItem { Text = "white", Value = "white     " });
             hairColour.Add(new SelectListItem { Text = "brown", Value = "brown     " });
@@ -54,14 +53,14 @@ namespace UIChildProtection.Areas.Common.Controllers
             ViewBag.Haircolour = hairColour;
 
             List<SelectListItem> yesno = new List<SelectListItem>();
-            yesno.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            yesno.Add(new SelectListItem { Text = "Select", Value = "No" });
             yesno.Add(new SelectListItem { Text = "No", Value = "No " });
             yesno.Add(new SelectListItem { Text = "Yes", Value = "Yes" });
             ViewBag.Yesno = yesno;
 
 
             List<SelectListItem> identityMark = new List<SelectListItem>();
-            identityMark.Add(new SelectListItem { Text = "Select", Value = "Select"/*, Selected = true */});
+            identityMark.Add(new SelectListItem { Text = "Select", Value = "No"/*, Selected = true */});
             identityMark.Add(new SelectListItem { Text = "Scars", Value = "Scars" });
             identityMark.Add(new SelectListItem { Text = "Birthmarks", Value = "Birthmarks" });
             identityMark.Add(new SelectListItem { Text = "moles", Value = "moles" });
@@ -69,7 +68,7 @@ namespace UIChildProtection.Areas.Common.Controllers
             ViewBag.IdentityMark = identityMark;
 
             List<SelectListItem> identityMarkLocation = new List<SelectListItem>();
-            identityMarkLocation.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            identityMarkLocation.Add(new SelectListItem { Text = "Select", Value = "No" });
             identityMarkLocation.Add(new SelectListItem { Text = "face", Value = "face" });
             identityMarkLocation.Add(new SelectListItem { Text = "mouth", Value = "mouth" });
             identityMarkLocation.Add(new SelectListItem { Text = "chin", Value = "chin" });
@@ -84,7 +83,7 @@ namespace UIChildProtection.Areas.Common.Controllers
 
 
             List<SelectListItem> Colour = new List<SelectListItem>();
-            Colour.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            Colour.Add(new SelectListItem { Text = "Select", Value = "NO" });
             Colour.Add(new SelectListItem { Text = "black", Value = "black" });
             Colour.Add(new SelectListItem { Text = "brown", Value = "brown" });
             Colour.Add(new SelectListItem { Text = "gray", Value = "gray" });
@@ -100,7 +99,7 @@ namespace UIChildProtection.Areas.Common.Controllers
 
 
             List<SelectListItem> complexion = new List<SelectListItem>();
-            complexion.Add(new SelectListItem { Text = "Select", Value = "Select" });
+            complexion.Add(new SelectListItem { Text = "Select", Value = "NO" });
             complexion.Add(new SelectListItem { Text = "Sallow", Value = "Sallow" });
             complexion.Add(new SelectListItem { Text = "Olive", Value = "Olive" });
             complexion.Add(new SelectListItem { Text = "Yellow", Value = "Yellow" });

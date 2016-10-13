@@ -47,7 +47,18 @@ namespace DAL
         public void Save()
         {
 
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+                
+              
+            }
+           
         }
     }
 }

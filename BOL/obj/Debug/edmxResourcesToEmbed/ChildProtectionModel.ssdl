@@ -5,7 +5,7 @@
       <PropertyRef Name="ChildId" />
     </Key>
     <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ChildName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChildName" Type="varchar" MaxLength="50" />
     <Property Name="ChildAlternativeName" Type="varchar" MaxLength="50" />
     <Property Name="Age" Type="int" />
     <Property Name="Gender" Type="char" MaxLength="6" />
@@ -18,7 +18,7 @@
     <Property Name="Shirt" Type="varchar" MaxLength="12" />
     <Property Name="Trouser/Skert" Type="varchar" MaxLength="12" />
     <Property Name="imageUrl" Type="nvarchar(max)" />
-    <Property Name="Child_Missing_Date_Time" Type="date" />
+    <Property Name="Child_Missing_Date_Time" Type="datetime" />
     <Property Name="IsApproved" Type="varchar" MaxLength="1" />
     <Property Name="Province" Type="varchar(max)" />
     <Property Name="City" Type="varchar(max)" />
@@ -31,7 +31,7 @@
     <Property Name="Father_Name" Type="varchar" MaxLength="50" />
     <Property Name="Address_Of_Child" Type="varchar" MaxLength="150" />
     <Property Name="Phone_#" Type="varchar" MaxLength="50" />
-    <Property Name="Report_Created_Date_Time" Type="date" />
+    <Property Name="Report_Created_Date_Time" Type="datetime" />
     <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
     <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
     <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
@@ -41,7 +41,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Age" Type="int" />
     <Property Name="Gender" Type="char" MaxLength="6" />
     <Property Name="Build" Type="char" MaxLength="10" />

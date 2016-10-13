@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace UIChildProtection.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="A")]
     public class ApproveReportController : Controller
     {
         private ChildInfoBs objBs;
