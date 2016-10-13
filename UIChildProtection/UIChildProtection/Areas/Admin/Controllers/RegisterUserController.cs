@@ -42,6 +42,7 @@ namespace UIChildProtection.Areas.Admin.Controllers
                 }
                 else
                 {
+                    TempData["Msg"] = "Failed";
                     return View("Index");
                 }
             }

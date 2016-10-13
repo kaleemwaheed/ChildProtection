@@ -31,13 +31,36 @@
             var size = parseFloat(fileUpload.files[0].size / 1024).toFixed(2);
 
             if (size > 4096) {
-                alert("Image size Must be less than 4Mb.Your Image size is " + size + "Mb  greater than 4Mb");
+                alert("Image size Must be less than 4Mb.Your Image size is " + size + "Kb  greater than 4Mb");
                 // document.location.reload(true);
-                window.history.back();
+                @*window.location.href ="@Url.Action("Index", "SubmitReport" , new { area = "Common" })"*@
+                //window.history.back();
                 //location.reload();
+                //window.history.back();
                 //window.location.reload();
 
             }
+
+        } else {
+            alert("This browser does not support HTML5.");
+        }
+    }
+    function UploadCheck() {
+        var fileUpload = document.getElementById("file");
+        if (typeof (fileUpload.files) != "undefined") {
+
+            var size = parseFloat(fileUpload.files[0].size / 1024).toFixed(2);
+
+            if (size > 4096) {
+                alert("Image size Must be less than 4Mb.Your Image size is " + size + "Kb  greater than 4Mb");
+                // document.location.reload(true);
+                @*window.location.href ="@Url.Action("Index", "SubmitReport" , new { area = "Common" })"*@
+                //window.history.back();
+                //location.reload();
+                window.history.back();
+                //window.location.reload();
+
+                }
 
         } else {
             alert("This browser does not support HTML5.");
@@ -203,7 +226,7 @@
             <div class="col-md-10">
                 <input type="file" name="file" id="file"  onchange="readURL(this);" style="width: 100%;" /> <br />
                 <img id="ShowImage" src="#" />
-                @Html.ValidationMessageFor(model => model.imageUrl, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.imageUrl, "", new { @class = "text-danger"  })
                
                 @*@Html.EditorFor(model => model.imageUrl, new { htmlAttributes = new { @class = "form-control" } })*@
 
@@ -215,7 +238,7 @@
             <h5 class="control-label col-md-2"><b>Child Missing Date</b></h5>
             <div class="col-md-10">
                 @*@Html.EditorFor(model => model.Child_Missing_Date_Time, new { htmlAttributes = new { placeholder = " 01 01 2000", @class = "form-control" } })*@
-                <input type="datetime-local" class="form-control" name="Child_Missing_Date_Time" id="" placeholder="Date">
+                <input type="datetime-local" class="form-control"  onclick="Upload()" name="Child_Missing_Date_Time" id="" placeholder="Date">
 
            @*     @Html.TextBoxFor(model => model.Child_Missing_Date_Time, new { @class = "form-control datepicker", placeholder = "Enter Drop-off date here..." })*@
                 @Html.ValidationMessageFor(model => model.Child_Missing_Date_Time, "", new { @class = "text-danger" })
@@ -315,7 +338,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" onclick="Upload()" class="btn btn-default" />
+                <input type="submit" value="Create" onclick="UploadCheck()" class="btn btn-default" />
             </div>
         </div>
     </div>

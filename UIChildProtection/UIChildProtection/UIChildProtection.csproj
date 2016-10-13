@@ -134,6 +134,8 @@
     <Content Include="Areas\Common\Views\ImageSearch\Find.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SuspectInformation\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserList\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserList\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -150,6 +152,7 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\SuspectInformationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserListController.cs" />
     <Compile Include="Areas\Common\App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ApproveReportController.cs" />
