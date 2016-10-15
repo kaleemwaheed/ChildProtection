@@ -18,6 +18,7 @@ namespace BOL
         public int Id { get; set; }
         public string Name { get; set; }
          [Required]
+        [Range(10, 100, ErrorMessage = "Please enter (Guess/Known) the age.Between 10 to 100")]
         public Nullable<int> Age { get; set; }
         [Required]
         public string Gender { get; set; }

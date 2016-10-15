@@ -17,7 +17,7 @@ namespace UIChildProtection.Areas.Security
             context.MapRoute(
                 "Security_default",
                 "Security/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

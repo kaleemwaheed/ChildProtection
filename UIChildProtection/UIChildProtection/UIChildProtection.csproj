@@ -136,6 +136,10 @@
     <Content Include="Areas\Admin\Views\SuspectInformation\Index.cshtml" />
     <Content Include="Areas\Admin\Views\UserList\Index.cshtml" />
     <Content Include="Areas\Admin\Views\UserList\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AddReport\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MissingChild\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MissingChild\Display.cshtml" />
+    <Content Include="Areas\Admin\Views\MissingChild\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -150,7 +154,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\AddReportController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MissingChildController.cs" />
     <Compile Include="Areas\Admin\Controllers\SuspectInformationController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserListController.cs" />
     <Compile Include="Areas\Common\App_Start\RouteConfig.cs" />
@@ -164,6 +170,7 @@
     <Compile Include="Areas\Common\Controllers\SearchController.cs" />
     <Compile Include="Areas\Common\Controllers\SubmitReportController.cs" />
     <Compile Include="Areas\Common\Controllers\SuspectInformationController.cs" />
+    <Compile Include="Areas\Common\Controllers\ViewMissingReportController.cs" />
     <Compile Include="Areas\Common\Models\EyeDetect.cs" />
     <Compile Include="Areas\Common\Models\OptionList.cs" />
     <Compile Include="Areas\Security\Controllers\LoginController.cs" />
@@ -196,6 +203,7 @@
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Common\Controllers\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
+    <Folder Include="Areas\Common\Views\ViewMissingReport\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
     <Folder Include="Controllers\" />

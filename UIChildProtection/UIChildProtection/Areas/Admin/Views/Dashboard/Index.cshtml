@@ -11,8 +11,11 @@
 
     if (User.IsInRole("A") || User.IsInRole("U"))
     {
-        <a href="@Url.Action("Index", "BrowseMissingChild", new { area = "Common" })" class="links">
+        <a href="@Url.Action("Index", "MissingChild", new { area = "Admin" })" class="links">
             <img alt="Missing Child" src="~/imgIcons/missingchildicon.jpg" style="max-width: 100%; height: auto;" width="150" height="200">
+        </a>
+        <a href="@Url.Action("Index", "AddReport", new { area = "Admin" })" class="links">
+            <img alt="Missing Child" src="~/imgIcons/createReport.png" style="max-width: 100%; height: auto;" width="150" height="200">
         </a>
     }
 

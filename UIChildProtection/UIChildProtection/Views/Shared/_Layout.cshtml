@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Child Protection</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -18,10 +18,21 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Child Protection", "Index", "Home", new { area = "Common" }, new { @class = "navbar-brand" })
-                
+
+                @*@if (User.Identity.IsAuthenticated)
+                    {
+
+                        @Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", area = "Security" , @class= "btn pull-right" })
+
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Login", "Index", new { Controller = "Login", area = "Security", @class = "btn btn-danger" })
+                    }*@
+
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                         
+
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li> @Html.ActionLink("Dashboard", "Index", new { Controller = "Dashboard", area = "Admin" })</li>
@@ -31,20 +42,30 @@
                             <li> @Html.ActionLink("Home", "Index", new { Controller = "Home", area = "Common" })</li>
                         }
 
-                        
-                        <li> @Html.ActionLink("Create Report", "Index", new { Controller = "SubmitReport", area = "Common" })</li>
-                        <li> @Html.ActionLink("Missing Child", "Index", new { Controller = "BrowseMissingChild", area = "Common" })</li>
-                        <li> @Html.ActionLink("Find Child", "Index", new { Controller = "Search", area = "Common" })</li>
-                        <li> @Html.ActionLink("Suspect Information", "Index", new { Controller = "SuspectInformation", area = "Common" })</li>
-
-                        
                         @if (User.Identity.IsAuthenticated)
                         {
 
-                        <li> @Html.ActionLink("Approve", "Index", new { Controller = "ApproveReport", area = "Admin" })</li>
-                        <li> @Html.ActionLink("Register", "Index", new { Controller = "RegisterUser", area = "Admin" })</li>
-                        <li> @Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", area = "Security" })</li>
-                        <li> <a href="#">@User.Identity.Name </a></li>
+                        }
+                        else
+                        {
+                            <li> @Html.ActionLink("Missing Child", "Index", new { Controller = "BrowseMissingChild", area = "Common" })</li>
+                            <li> @Html.ActionLink("Create Report", "Index", new { Controller = "SubmitReport", area = "Common" })</li>
+                        }
+
+
+                        
+                        
+                        <li> @Html.ActionLink("Find Child", "Index", new { Controller = "Search", area = "Common" })</li>
+                        <li> @Html.ActionLink("Suspect Information", "Index", new { Controller = "SuspectInformation", area = "Common" })</li>
+
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <li> @Html.ActionLink("Approve", "Index", new { Controller = "ApproveReport", area = "Admin" })</li>
+                            <li> @Html.ActionLink("Register", "Index", new { Controller = "RegisterUser", area = "Admin" })</li>
+                            <li> @Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", area = "Security" })</li>
+                            <li> <a href="@Url.Action("Index", "Dashboard", new { area = "Admin" })">@User.Identity.Name </a></li>
                         }
                         else
                         {
@@ -56,8 +77,7 @@
 
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>

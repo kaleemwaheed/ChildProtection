@@ -100,7 +100,13 @@ namespace UIChildProtection.Areas.Common.Controllers
 
                /* physicalPath = null*/;
 
-            }//End if file
+            }   //End if file
+            else
+            {
+
+                TempData["Msg"] = "Please select Image for search";
+                return View("Index");
+            }
 
             if (list != null)
             {
@@ -112,7 +118,7 @@ namespace UIChildProtection.Areas.Common.Controllers
             else
             {
                 TempData["Msg"] = "Match Not Found";
-                return RedirectToAction("Index");
+                return View("Index");
             }
 
         }

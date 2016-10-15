@@ -3,7 +3,13 @@
 <script src="~/Scripts/jquery.validate.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 <script>
-
+    $(document).ready(function () {
+        $("#colors option").each(function () {
+            if ($(this).val() != '') {
+                $(this).css('background-color', $(this).val());
+            }
+        });
+    });
     //$(function () { // will trigger when the document is ready
     //   $('.datepicker').datepicker(); //Initialise any date pickers
     //});
@@ -130,24 +136,59 @@
             </div>
         </div>
 
+
+
         <div class="form-group">
-            @*@Html.LabelFor(model => model.HairColor, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5 class="control-label col-md-2"><b>Hair Colour</b></h5>
+            <div class="col-md-10">
+                <select id="colors" name="HairColor">
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">brown</option>
+                    <option value="Gray">gray</option>
+                    <option value="White">White</option>
+                    <option value="Red">Red</option>
+                </select>
+
+            </div>
+        </div>
+
+
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.HairColor, htmlAttributes: new { @class = "control-label col-md-2" })
             <h5 class="control-label col-md-2"><b>Hair Colour</b></h5>
             <div class="col-md-10">
 
                 @Html.DropDownList("HairColor", (IEnumerable<SelectListItem>)ViewBag.HairColour, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HairColor, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
+
+
 
         <div class="form-group">
-            @*@Html.LabelFor(model => model.EyeColor, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5 class="control-label col-md-2"><b>Eye Colour</b></h5>
+            <div class="col-md-10">
+                <select id="colors" name="EyeColor">
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">brown</option>
+                    <option value="Gray">gray</option>
+                    <option value="Hazel">Hazel</option>
+                </select>
+
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.EyeColor, htmlAttributes: new { @class = "control-label col-md-2" })
             <h5 class="control-label col-md-2"><b>Eye Colour</b></h5>
             <div class="col-md-10">
                 @Html.DropDownList("EyeColor", (IEnumerable<SelectListItem>)ViewBag.EyeColour, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EyeColor, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Glasses, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -180,25 +221,69 @@
 
 
         <div class="form-group">
-            @*@Html.LabelFor(model => model.Shirt, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <h5 class="control-label col-md-2"><b>Shirt/Kameez Colour</b></h5>
+            <div class="col-md-10">
+                <select id="colors" name="Shirt">
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">brown</option>
+                    <option value="Gray">gray</option>
+                    <option value="Green">Green</option>
+                    <option value="Hazel">Hazel</option>
+                    <option value="Pink">pink</option>
+                    <option value="Purple">purple</option>
+                    <option value="Green">Green</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Orange">orange</option>
+                </select>
+
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Shirt, htmlAttributes: new { @class = "control-label col-md-2" })
             <h5 class="control-label col-md-2"><b>Shirt/Kameez Colour</b></h5>
             <div class="col-md-10">
                 @Html.DropDownList("Shirt", (IEnumerable<SelectListItem>)ViewBag.Colour, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Shirt, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
-        <div class="form-group">
-            @*@Html.LabelFor(model => model.Trouser_Skert, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Trouser_Skert, htmlAttributes: new { @class = "control-label col-md-2" })
             <h5 class="control-label col-md-2"><b>Pent/Shalwar Colour</b></h5>
             <div class="col-md-10">
                 @Html.DropDownList("Trouser_Skert", (IEnumerable<SelectListItem>)ViewBag.Colour, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Trouser_Skert, "", new { @class = "text-danger" })
             </div>
+        </div>*@
+
+        <div class="form-group">
+            <h5 class="control-label col-md-2"><b>Trouser_Skert Colour</b></h5>
+            <div class="col-md-10">
+                <select id="colors" name="Trouser_Skert">
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">brown</option>
+                    <option value="Gray">gray</option>
+                    <option value="Green">Green</option>
+                    <option value="Hazel">Hazel</option>
+                    <option value="Pink">pink</option>
+                    <option value="Purple">purple</option>
+                    <option value="Green">Green</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Orange">orange</option>
+                </select>
+
+            </div>
         </div>
+
+
         <div class="form-group">
             @*@Html.LabelFor(model => model.MissingLocation, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <h5 class="control-label col-md-2"><b>Provinve</b></h5>
+            <h5 class="control-label col-md-2"><b>Province</b></h5>
             <div class="col-md-10">
                @Html.DropDownList("Province", (IEnumerable<SelectListItem>)ViewBag.Province, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Province, "", new { @class = "text-danger" })
@@ -304,7 +389,7 @@
         <br />
         <hr />
 
-        <h4>DETAILS OF FATHER MISSING CHILD</h4>
+        <h4>DETAILS OF GUARDIAN MISSING CHILD</h4>
         <div class="form-group">
             @*@Html.LabelFor(model => model.Father_Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <h5 class="control-label col-md-2"><b>Guardian Name</b></h5>

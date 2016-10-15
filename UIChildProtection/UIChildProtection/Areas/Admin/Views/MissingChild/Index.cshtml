@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<BOL.tbl_ChildInfo>
 
 @{
-    ViewBag.Title = "Find";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Find</h2>
-
+<br />
+<br />
+<br />
 
 @if (TempData["Msg"] != null)
 {
@@ -27,7 +28,7 @@
 
 
                 <div class="thumbnail">
-                    <a href="@Url.Action("Display", "BrowseMissingChild"  ,new {SortOrder =item.ChildId })" class="links">
+                    <a href="@Url.Action("Display", "MissingChild"  ,new {SortOrder =item.ChildId })" class="links">
                         <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" width="150" height="200" )">
 
                     </a>
@@ -37,11 +38,25 @@
                         <h5>Father Name:  @item.Father_Name</h5>
                     </div>
                     <h6>Missing Date  @item.Child_Missing_Date_Time </h6>
+                    @{ if (@User.Identity.Name == item.PoliceStationEmail)
+                        {
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ChildId })
+                        }
+
+                    }
+
+                    @*@{ if (@User.Identity.Name == item.PoliceStationEmail)
+                            {
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ChildId })
+                            }
+
+                        }*@
+
                 </div>
             </div>
 
 
-        }
+                        }
     </div>
 
-}
+                        }

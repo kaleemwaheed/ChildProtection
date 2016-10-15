@@ -11,6 +11,7 @@ namespace BOL
     {   [Required]
         public string ChildName { get; set; }
         [Required]
+        [Range(1, 100 ,ErrorMessage = "Enter Valid Age of child."  )]
         public Nullable<int> Age { get; set; }
         [Required]
         public string Gender { get; set; }

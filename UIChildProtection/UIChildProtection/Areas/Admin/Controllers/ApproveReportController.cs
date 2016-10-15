@@ -19,10 +19,10 @@ namespace UIChildProtection.Areas.Admin.Controllers
         // GET: Admin/ApproveReport
         public ActionResult Index(string Status)
         {
-            ViewBag.Status = (Status == null ? "P" : Status);
+            ViewBag.Status = (Status == null ? "A" : Status);
             if (Status == null)
             {
-                var urls = objBs.GetALL().Where(x => x.IsApproved == "P").ToList();
+                var urls = objBs.GetALL().Where(x => x.IsApproved == "A").ToList();
                 return View(urls);
             }
             else

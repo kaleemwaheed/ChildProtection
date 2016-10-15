@@ -17,7 +17,7 @@ namespace UIChildProtection.Areas.Common
             context.MapRoute(
                 "Common_default",
                 "Common/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home",action = "Index", id = UrlParameter.Optional }
             );
         }
     }

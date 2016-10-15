@@ -191,7 +191,7 @@ namespace UIChildProtection.Areas.Common.Controllers
 
 
             var find = obj.GetALL().ToList().Where(x => x.ChildName == info.ChildName || x.Age == info.Age || x.Gender == info.Gender || x.ChildAlternativeName == info.ChildAlternativeName || x.HairColor == info.HairColor || x.Build == info.Build || x.EyeColor == info.EyeColor || x.Glasses == info.Glasses || x.IdentityMark == info.IdentityMark || x.Shirt == info.Shirt || x.Trouser_Skert == info.Trouser_Skert || x.Province == info.Province || x.City == info.City || x.IdentificationMarkOnBody == info.IdentificationMarkOnBody);
-            if (find.Any() || list!=null)
+            if (find.Any() /*|| list!=null*/)
             {
                 
                 return View(find);

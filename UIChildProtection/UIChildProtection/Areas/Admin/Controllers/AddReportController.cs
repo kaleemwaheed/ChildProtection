@@ -7,21 +7,23 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using UIChildProtection.Areas.Common.Models;
+using System.Web.Security;
 
-namespace UIChildProtection.Areas.Common.Controllers
+namespace UIChildProtection.Areas.Admin.Controllers
 {
-    public class SubmitReportController : Controller
+    [Authorize(Roles = "A,U")]
+    public class AddReportController : Controller
     {
-        // GET: Common/SubmitReport
-        // GET: Common/BrowseMissingChild
         private ChildInfoBs objBs;
-       // OptionList opt = new OptionList();
+        private UserBs objUserBs;
+        string policStationNameLocal;
 
-        public SubmitReportController()
+        public AddReportController()
         {
             objBs = new ChildInfoBs();
+            objUserBs = new UserBs();
         }
+        // GET: Admin/AddReport
         public ActionResult Index()
         {
             List<SelectListItem> gender = new List<SelectListItem>();
@@ -85,7 +87,7 @@ namespace UIChildProtection.Areas.Common.Controllers
             identityMarkLocation.Add(new SelectListItem { Text = "foot", Value = "foot" });
             ViewBag.IdentityMarkLocation = identityMarkLocation;
 
- 
+
 
             List<SelectListItem> Colour = new List<SelectListItem>();
             Colour.Add(new SelectListItem { Text = "blue", Value = "blue" });
@@ -166,12 +168,20 @@ namespace UIChildProtection.Areas.Common.Controllers
             city.Add(new SelectListItem { Text = "Skardu", Value = "Skardu" });
             ViewBag.City = city;
 
-
             return View();
         }
         [HttpPost]
         public ActionResult Create(tbl_ChildInfo obj, HttpPostedFileBase file)
         {
+           
+            string email = User.Identity.Name;
+            var UserRecord = objUserBs.GetALL().Where(x => x.UserEmail == email);
+            
+            foreach(var v in UserRecord)
+            {
+                policStationNameLocal = v.StationName;
+            }
+            
             //if (file.ContentLength > (4 * 1024 * 1024))
             //{
             //    TempData["Msg"] = "Created Failed File Lenght Must be less than 4MB";
@@ -209,11 +219,11 @@ namespace UIChildProtection.Areas.Common.Controllers
                         try
                         {
                             obj.imageUrl = ImageName;
-                            obj.IsApproved = "P";
+                            obj.IsApproved = "A";
                             obj.ChildName = obj.ChildName.ToUpper();
                             obj.ChildAlternativeName = obj.ChildAlternativeName.ToUpper();
-                            obj.PoliceStationEmail = " ";
-                            obj.PoliceStation = " ";
+                            obj.PoliceStationEmail = email;
+                            obj.PoliceStation = policStationNameLocal;
                             obj.Report_Created_Date_Time = DateTime.Now;
                             objBs.Insert(obj);
                             TempData["Msg"] = "Created Successfully";
@@ -246,5 +256,12 @@ namespace UIChildProtection.Areas.Common.Controllers
         }
 
 
+
+
+
+
+
+
+     
     }
 }

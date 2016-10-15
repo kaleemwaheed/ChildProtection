@@ -1,0 +1,221 @@
+﻿@model IEnumerable<BOL.tbl_ChildInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .rotate90 {
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }  
+     .rotate-90 {
+         -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+       .rotate-180 {
+         -moz-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+    /*-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+
+</style>
+<script>
+    function toggle(e1) {
+        e1.className = "rotate90";
+    }
+    function toggle2(e1) {
+        e1.className = "rotate-90";
+    }
+    function toggle3(e1) {
+        e1.className = "rotate-180";
+    }
+</script>
+
+<h2>Detail </h2>
+<div class="table-responsive">
+    <table class="table">
+        @*<tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChildName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChildAlternativeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Build)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HairColor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EyeColor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Glasses)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdentityMark)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Shirt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Trouser_Skert)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.imageUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsApproved)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MissingLocation)
+                </th>
+                <th></th>
+            </tr>*@
+
+        @foreach (var item in Model)
+        {
+            <tr style="text-align: center;">
+                <td>
+                    @*<a href="/BrowseMissingChild/Display">
+                        <img src="~/images/@Html.DisplayFor(modelItem => item.imageUrl)" width="100" height="100" />*@
+
+
+                    <a href="@Url.Action("Display", "BrowseMissingChild"  ,new {SortOrder =item.ChildId })" >
+                        <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" style="max-width: 100%; height: auto;" onclick="toggle3(this)" onmouseover="toggle(this)"  onmouseout="toggle2(this)">
+                    </a>
+                    @*</a>*@
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Name</h6>
+                    @Html.DisplayFor(modelItem => item.ChildName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Nick Name</h6>
+                    @Html.DisplayFor(modelItem => item.ChildAlternativeName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Age</h6>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Gender</h6>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Body/Build</h6>
+                    @Html.DisplayFor(modelItem => item.Build)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Hair Colour</h6>
+                    @Html.DisplayFor(modelItem => item.HairColor)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Eye Colour</h6>
+                    @Html.DisplayFor(modelItem => item.EyeColor)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Glasses Wear</h6>
+                    @Html.DisplayFor(modelItem => item.Glasses)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Identity Mark</h6>
+                    @Html.DisplayFor(modelItem => item.IdentityMark)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Shirt/Kameez Colour</h6>
+                    @Html.DisplayFor(modelItem => item.Shirt)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Pent/Shalwar Colour</h6>
+                    @Html.DisplayFor(modelItem => item.Trouser_Skert)
+                </td>
+            </tr>
+         
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Missing Location</h6>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Missing Date</h6>
+                    @Html.DisplayFor(modelItem => item.Child_Missing_Date_Time)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Missing Report By</h6>
+                    @Html.DisplayFor(modelItem => item.Report_by_Person_Name)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Police Station Email</h6>
+                    @Html.DisplayFor(modelItem => item.PoliceStationEmail)
+                </td>
+
+            </tr>
+        
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Register Report in Police Station</h6>
+                    @Html.DisplayFor(modelItem => item.PoliceStation)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <h6 class="control-label col-md-2">Report Time</h6>
+                    @Html.DisplayFor(modelItem => item.Report_Created_Date_Time)
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</div>

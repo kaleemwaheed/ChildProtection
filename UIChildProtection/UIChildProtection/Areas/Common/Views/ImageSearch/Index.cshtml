@@ -39,27 +39,26 @@
 </script>
 
 
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr />
 @if (TempData["Msg"] != null)
 {
-    @TempData["Msg"].ToString()
+    <h3> @TempData["Msg"].ToString()</h3>
 }
-
-
-    <br>
-    <hr />
-    <br>
-    <hr />
-    <br>
-    <hr />
+<hr />
     @using (Html.BeginForm("Find", "ImageSearch", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div>
-            Image<br />
+            <b> Image </b> <br />
             <input type="file" name="file" id="file" onchange="readURL(this);" style="width: 100%;" /> <br />
             <img id="ShowImage" src="#" />
             <input type="submit" value="Search" class="submit"  onclick="Upload()"/>
         </div>
     }
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+
