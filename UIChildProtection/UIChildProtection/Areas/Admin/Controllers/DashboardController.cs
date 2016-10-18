@@ -14,5 +14,7 @@ namespace UIChildProtection.Areas.Admin.Controllers
         {
             return View();
         }
+
+        
     }
 }

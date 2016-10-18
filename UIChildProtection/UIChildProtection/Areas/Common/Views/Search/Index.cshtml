@@ -26,13 +26,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<h2>Index</h2>
+<br /><br />
 @if (TempData["Msg"] != null)
 {
     <h3>@TempData["Msg"].ToString()</h3>
 }
-<li><b > @Html.ActionLink("Image Seach", "Index", new { Controller = "ImageSearch", area = "Common" })</b></li>
+<b  class="btn btn-default" > @Html.ActionLink("Image Seach", "Index", new { Controller = "ImageSearch", area = "Common" })</b>
 
 @using (Html.BeginForm("Find", "Search", FormMethod.Post))
 {

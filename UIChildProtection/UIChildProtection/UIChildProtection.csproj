@@ -111,13 +111,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\modern-business.css" />
+    <Content Include="Content\morris.css" />
+    <Content Include="Content\sb-admin.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <Content Include="Areas\Common\Views\BrowseMissingChild\Index.cshtml" />
     <Content Include="Areas\Common\Views\BrowseMissingChild\Display.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -140,17 +142,37 @@
     <Content Include="Areas\Admin\Views\MissingChild\Index.cshtml" />
     <Content Include="Areas\Admin\Views\MissingChild\Display.cshtml" />
     <Content Include="Areas\Admin\Views\MissingChild\Edit.cshtml" />
+    <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="img\1235914_896849423660479_8824547505819836143_n.jpg" />
+    <Content Include="img\20160606_110155.jpg" />
+    <Content Include="img\20160606_110542.jpg" />
+    <Content Include="img\765800652d5c8eba1fbcca10ae189b579af4c144212d579e43ee7cc5fcdb9b581406.jpg" />
+    <Content Include="img\dd.jpg" />
+    <Content Include="img\IMG-20150623-WA0019.jpg" />
+    <Content Include="img\IMG-20151109-WA0046.jpg" />
+    <Content Include="img\IMG-20151109-WA0067.jpg" />
+    <Content Include="img\IMG-20151110-WA0007.jpg" />
+    <Content Include="img\IMG-20151213-WA0008.jpg" />
+    <Content Include="img\Jannat hayat.jpg" />
+    <Content Include="img\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\contact_me.js" />
+    <Content Include="Scripts\graph.js" />
+    <Content Include="Scripts\jqBootstrapValidation.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\raphael-min.js" />
+    <Content Include="Scripts\raphael.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

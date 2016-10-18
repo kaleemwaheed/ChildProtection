@@ -1,7 +1,239 @@
 ﻿
-@{
-    ViewBag.Title = "Index";
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<h2>Index of Home</h2>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+        }
+    </style>
 
+    <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!-- Navigation -->
+    <!-- Header Carousel -->
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to Child Protection
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Missing Report</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p> When a loved one goes missing, friends and family face an anxious wait for their return or to find out what has happened to them. Some missing people are never found - but they are never forgotten.</p>
+                        <a href="@Url.Action("Index","SubmitReport", new {area = "Common" })" class="btn btn-default"> Create Missing Report</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"> Objective</i></h4>
+
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            The Objective of this Application is to help Police in Missing Child cases. This System is creating awareness to the general public in case of child missing.Project will help to Improve and Authentic Investigation by Police team. The Main and Basic Function is to make all information about Missing cases is to make it online and up to date. It will reduce communication gap in Public and Police It will also Increase thrust relation between Public and Police
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i>Suspect Information</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>This system will providing ability to give information about crimes/missing child in a timely manner to police without showing their identity</p>
+                        <a href="@Url.Action("Index", "SuspectInformation", new {area = "Common" })" class="btn btn-default">Give Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- /.row -->
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Missing Childs</h2>
+            </div>
+        </div>
+        <br>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <div class="item active">
+                    <img src="~/img/Kidnapping.jpg" alt="Chania" style="width:460px; height:345px;">
+                    <div class="carousel-caption">
+                        <h3>Child protection</h3>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/img/Sohaib-Kashif.jpg" alt="Chania" style="width:460px; height:345px;">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                    </div>
+                    <h5>10-year-old child Sohaib Kashif who went missing from Nishtar Colony.</h5>
+                    <h5> 11-year-old Tooba went missing from Railway Colony</h5>
+                </div>
+
+                <div class="item">
+                    <img src="~/img/Jannat hayat.jpg" alt="Flower" style="width:460px; height:345px;">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                    </div>
+                    <h5> Janat Hayat a three-year-old girl went missing from Anarkali area.</h5>
+                </div>
+
+                <div class="item">
+                    <img src="~/img/qamar.jpg" alt="Inam" style="width:460px; height:345px;">
+                    <div class="carousel-caption">
+
+                    </div>
+                    <h5> Aman Qamar13-year-old boy was kidnapped in Samanabad.</h5>
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*<div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="~/img/Jannat hayat.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>*@
+    </div>
+    <!-- /.row -->
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Latest Report:</h2>
+        </div>
+        <div class="col-md-6">
+            <p>This is  report of Missing Child:</p>
+            <table style="width:20%">
+                <tr>
+                    <th>Name:</th>
+                    <td>Jannat </td>
+                </tr>
+                <tr>
+
+                    <th>Age:</th>
+                    <td>3 year </td>
+
+                </tr>
+                <tr>
+                    <th>Area:</th>
+                    <td>Anarkali</td>
+                </tr>
+            </table>
+
+            <p>If anybody Watch this Child Inform to Police  Or Call at 15.</p>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" src="~/img/Jannat hayat.jpg" style="width:350px; height:300px;">
+        </div>
+    </div>
+    <!-- /.row -->
+    <br>
+    <!-- Call to Action Section -->
+    <div class="well">
+        <div class="row">
+            <div class="col-md-8">
+                <p>For any Supect Infomation or any unhappy incident Occur nearby your </p>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-default btn-block" href="#">Call at 15</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+
+
+
+
+</body>
+</html>

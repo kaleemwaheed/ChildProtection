@@ -7,8 +7,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
+<br />
+<h2>Registration Form</h2>
 @if (TempData["Msg"] != null)
 {
     <h3>@TempData["Msg"].ToString()</h3>
@@ -95,5 +95,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+
 </div>

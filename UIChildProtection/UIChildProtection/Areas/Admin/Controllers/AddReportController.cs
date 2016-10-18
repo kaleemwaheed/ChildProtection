@@ -244,14 +244,19 @@ namespace UIChildProtection.Areas.Admin.Controllers
                     else
                     {
                         TempData["Msg"] = "Only select  .Jpg , .png ,.jpg ,jpeg";
-                        return RedirectToAction("Index");
+                        return View("Index");
 
                     }
+                }
+                else
+                {
+                    TempData["Msg"] = "Select Image file";
+                    return View("Index");
                 }
 
             }
             TempData["Msg"] = "Created Failed";
-            return RedirectToAction("Index");
+            return View("Index");
 
         }
 

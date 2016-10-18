@@ -56,8 +56,8 @@ namespace UIChildProtection.Areas.Common.Controllers
                 }
                 else
                 {
-                    Console.Write("Only select  .Jpg , .png ,.jpg ,jpeg");
-                    return RedirectToAction("Index");
+                    TempData["Msg"] = ("Only select  .Jpg , .png ,.jpg ,jpeg");
+                    return View("Index");
                 }
 
                 //var imageFile = Server.MapPath("~/images/" + item);

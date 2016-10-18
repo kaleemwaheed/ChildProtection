@@ -24,7 +24,7 @@
             var size = parseFloat(fileUpload.files[0].size / 1024).toFixed(2);
 
             if (size > 1024) {
-                alert("Image size Must be less than 1Mb.Your Image size is " + size + "Mb  greater than 1Mb");
+                alert("Image size Must be less than 1Mb.Your Image size is " + size + "kb  greater than 1Mb");
                 // document.location.reload(true);
                 window.history.back();
                 //location.reload();
@@ -39,14 +39,7 @@
 </script>
 
 
-
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <hr />
+<br />
 @if (TempData["Msg"] != null)
 {
     <h3> @TempData["Msg"].ToString()</h3>
@@ -55,7 +48,7 @@
     @using (Html.BeginForm("Find", "ImageSearch", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div>
-            <b> Image </b> <br />
+            <b> Browse Image </b> <br />
             <input type="file" name="file" id="file" onchange="readURL(this);" style="width: 100%;" /> <br />
             <img id="ShowImage" src="#" />
             <input type="submit" value="Search" class="submit"  onclick="Upload()"/>

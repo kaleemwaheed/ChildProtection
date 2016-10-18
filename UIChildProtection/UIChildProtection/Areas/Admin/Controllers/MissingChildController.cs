@@ -18,9 +18,15 @@ namespace UIChildProtection.Areas.Admin.Controllers
         {
             objBs = new ChildInfoBs();
         }
-        public ActionResult Index()
+        public ActionResult Index(String Page)
         {
             var childinfo = objBs.GetALL().Where(x => x.IsApproved == "A");
+            ViewBag.TotalPages = Math.Ceiling(objBs.GetALL().Where(x => x.IsApproved == "A").Count() / 6.0);
+
+
+            int page = int.Parse(Page == null ? "1" : Page);
+            ViewBag.Page = page;
+            childinfo = childinfo.Skip((page - 1) * 6).Take(6).ToList();
             return View(childinfo);
            
         }

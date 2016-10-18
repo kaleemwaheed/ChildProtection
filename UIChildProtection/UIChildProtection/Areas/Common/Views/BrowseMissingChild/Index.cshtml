@@ -6,7 +6,7 @@
 }
 
 
-<h2>Index</h2>
+<br />
 
     
                                     
@@ -41,4 +41,23 @@
         }
     </div>
 
+}
+
+@{
+    double TotalPage = @ViewBag.TotalPages;
+}
+@for (int i = 1; i <= TotalPage; i++)
+{
+    if (i == ViewBag.Page)
+    {
+        <b>
+            | @Html.ActionLink(i.ToString() + " ", "Index", new { Page = i , @class= "text-danger" })|
+
+        </b>
+    }
+    else
+    {
+        @Html.ActionLink(i.ToString() + " ", "Index", new {Page = i, @class = "text-danger" })
+
+    }
 }
