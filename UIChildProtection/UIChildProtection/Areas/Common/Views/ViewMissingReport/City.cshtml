@@ -1,0 +1,105 @@
+﻿@model IEnumerable<BOL.tbl_ChildInfo>
+
+@{
+    ViewBag.Title = "Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+
+<b class="btn-info btn"> @Html.ActionLink("Punjab", "Punjab", new { Controller = "ViewMissingReport", area = "Common" })</b>
+<b class="btn-info btn"> @Html.ActionLink("Sindh", "Sindh", new { Controller = "ViewMissingReport", area = "Common" })</b>
+<b class="btn-info btn"> @Html.ActionLink("Blochistan", "Blochistan", new { Controller = "ViewMissingReport", area = "Common" })</b>
+<b class="btn-info btn"> @Html.ActionLink("KPK", "KPK", new { Controller = "ViewMissingReport", area = "Common" })</b>
+<b class="btn-info btn"> @Html.ActionLink("Capital", "Capital", new { Controller = "ViewMissingReport", area = "Common" })</b>
+<b class="btn-info btn"> @Html.ActionLink("Gilgit", "Gilgit", new { Controller = "ViewMissingReport", area = "Common" })</b>
+<b class="btn-info btn"> @Html.ActionLink("Kashmir", "Kashmir", new { Controller = "ViewMissingReport", area = "Common" })</b>
+
+
+@using (Html.BeginForm("City", "ViewMissingReport", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="row col-lg-9">
+        <select name="City">
+            <option>Lahore</option>
+            <option>Faisalabad</option>
+            <option>Rawalpindi</option>
+            <option>Rawalpindi</option>
+            <option>Multan</option>
+            <option>Gujranwala</option>
+            <option>Sargodha</option>
+            <option>Sialkot</option>
+            <option>Bahawalpur</option>
+            <option>Gujrat</option>
+            <option>Sheikhupura</option>
+            <option>Gilgit</option>
+            <option>Jhang</option>
+            <option>Quetta</option>
+            <option>Turbat</option>
+            <option>Sibi</option>
+            <option>Lasbela</option>
+            <option>Zhob</option>
+            <option>Gwadar</option>
+            <option>Nasirabad</option>
+            <option>Jaffarabad</option>
+            <option>Khuzdar</option>
+            <option>Peshawar</option>
+            <option>Mardan</option>
+            <option>Abbottabad</option>
+            <option>Mingora</option>
+            <option>Kohat</option>
+            <option>Bannu</option>
+            <option>Swabi</option>
+            <option>Charsadda</option>
+            <option>Nowshera</option>
+            <option>Karachi</option>
+            <option>Hyderabad</option>
+            <option>Sukkur</option>
+            <option>Larkana</option>
+            <option>Nawabshah</option>
+            <option>MirpurKhas</option>
+            <option>Jacobabad</option>
+            <option>Shikarpur</option>
+            <option>Dadu</option>
+            <option>Gilgit</option>
+            <option>Skardu</option>
+            <option>Islamabad</option>
+        </select>
+        <input type="submit" value="Search" class="btn btn-default" />
+        <b style="text-align:match-parent">Missing child </b> @ViewBag.Count
+    </div>
+}
+@using (Html.BeginForm())
+{
+
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+
+
+                <div class="thumbnail">
+                    <a href="@Url.Action("Display", "BrowseMissingChild"  ,new {SortOrder =item.ChildId })" class="links">
+                        <img alt="" src="~/images/@Html.DisplayFor(modelItem => item.imageUrl )" width="150" height="200" )">
+
+                    </a>
+                    <div class="pull-right">
+                        <h5> Name: @item.ChildName</h5>
+                        <h5>Age:  @item.Age</h5>
+                        <h5>Father Name:  @item.Father_Name</h5>
+                    </div>
+                    <h6>Missing Date  @item.Child_Missing_Date_Time </h6>
+                </div>
+            </div>
+
+
+        }
+    </div>
+
+}
+

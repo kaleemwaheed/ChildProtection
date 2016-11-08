@@ -16,7 +16,8 @@ namespace UIChildProtection.Areas.Common.Controllers
         // GET: Common/SubmitReport
         // GET: Common/BrowseMissingChild
         private ChildInfoBs objBs;
-       // OptionList opt = new OptionList();
+        int id;
+        // OptionList opt = new OptionList();
 
         public SubmitReportController()
         {
@@ -216,7 +217,13 @@ namespace UIChildProtection.Areas.Common.Controllers
                             obj.PoliceStation = " ";
                             obj.Report_Created_Date_Time = DateTime.Now;
                             objBs.Insert(obj);
-                            TempData["Msg"] = "Created Successfully";
+                            var getid = objBs.GetALL().Where(x=>x.Report_Created_Date_Time==obj.Report_Created_Date_Time);
+                         
+                            foreach (var item in getid)
+                            {
+                                id = item.ChildId;
+                            }
+                            TempData["Msg"] = "Created Successfully. Your Missing Report #"+id;
                             return RedirectToAction("Index");
                         }
                         catch (DbEntityValidationException ex)

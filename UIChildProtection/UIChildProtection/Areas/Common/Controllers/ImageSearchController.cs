@@ -66,22 +66,22 @@ namespace UIChildProtection.Areas.Common.Controllers
                 //for (int i = 0; i < item.Count(); i++) {
 
                 //var imageFile = Server.MapPath("~") + @"images\" + item[i];
-                Bitmap largeImage = (Bitmap)Bitmap.FromFile(physicalPath);
+                Bitmap findImage = (Bitmap)Bitmap.FromFile(physicalPath);
                 for (int i = 0; i < filesindirectory.Count(); i++)
                 {
 
                     string physicalPath2 = filesindirectory[i];
-                    Bitmap smallImage = (Bitmap)Bitmap.FromFile(physicalPath2);
+                    Bitmap BrowseImage = (Bitmap)Bitmap.FromFile(physicalPath2);
                     // (set similarity threshold to 90%)
                     ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.50f);
 
-                    Size size = GetSize(largeImage.Size, smallImage.Size);
+                    Size size = FaceSize(findImage.Size, BrowseImage.Size);
                     ResizeBilinear filter = new ResizeBilinear(size.Width, size.Height);
-                    smallImage = filter.Apply(smallImage);
-                    TemplateMatch[] matches = tm.ProcessImage(largeImage, smallImage);
+                    BrowseImage = filter.Apply(BrowseImage);
+                    TemplateMatch[] matches = tm.ProcessImage(findImage, BrowseImage);
 
                     // find all matchings with specified above similarity
-                    //TemplateMatch[] matches = tm.ProcessImage(largeImage, smallImage);
+                    //TemplateMatch[] matches = tm.ProcessImage(findImage, BrowseImage);
 
                     if (matches.Length > 0 && matches.Length <= 1)
                     {
@@ -124,7 +124,7 @@ namespace UIChildProtection.Areas.Common.Controllers
         }
 
 
-        private Size GetSize(Size maxSize, Size size)
+        private Size FaceSize(Size maxSize, Size size)
         {
 
             double ratioWidth = (double)maxSize.Width / size.Width;

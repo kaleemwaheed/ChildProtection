@@ -11,18 +11,13 @@ namespace BOL
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class tbl_SuspectPersonInformation
     {
         public int Id { get; set; }
         public string Name { get; set; }
-         [Required]
-        [Range(10, 100, ErrorMessage = "Please enter (Guess/Known) the age.Between 10 to 100")]
         public Nullable<int> Age { get; set; }
-        [Required]
         public string Gender { get; set; }
-        [Required]
         public string Build { get; set; }
         public Nullable<int> Height { get; set; }
         public string HairColor { get; set; }

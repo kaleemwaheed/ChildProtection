@@ -41,6 +41,38 @@
           <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
           <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
         </EntityType>
+        <EntityType Name="tbl_ParentInformation">
+          <Key>
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Report_by_Person_Name" Type="varchar" MaxLength="50" />
+          <Property Name="CNIC" Type="bigint" />
+          <Property Name="Address" Type="varchar" MaxLength="150" />
+          <Property Name="Phone#" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Relation_to_Missing_Child" Type="varchar" MaxLength="50" />
+          <Property Name="Father_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Address_Of_Child" Type="varchar" MaxLength="150" />
+          <Property Name="Phone_#" Type="varchar" MaxLength="50" />
+          <Property Name="Report_Created_Date_Time" Type="datetime" />
+          <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
+          <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+          <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="StationName" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+        </EntityType>
         <EntityType Name="tbl_SuspectPersonInformation">
           <Key>
             <PropertyRef Name="Id" />
@@ -76,8 +108,19 @@
         </EntityType>
         <EntityContainer Name="ChildProtectionDbModelStoreContainer">
           <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ParentInformation" EntityType="Self.tbl_ParentInformation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_SuspectPersonInformation" EntityType="Self.tbl_SuspectPersonInformation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Profile" EntityType="Self.tbl_Profile" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_Profile].[UserId] AS [UserId], 
+    [tbl_Profile].[Role] AS [Role], 
+    [tbl_Profile].[StationName] AS [StationName], 
+    [tbl_Profile].[City] AS [City], 
+    [tbl_Profile].[Location] AS [Location], 
+    [tbl_Profile].[PhoneNumber] AS [PhoneNumber]
+    FROM [dbo].[tbl_Profile] AS [tbl_Profile]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -87,6 +130,8 @@
           <EntitySet Name="tbl_User" EntityType="ChildProtectionDbModel.tbl_User" />
           <EntitySet Name="tbl_ChildInfo" EntityType="ChildProtectionDbModel.tbl_ChildInfo" />
           <EntitySet Name="tbl_SuspectPersonInformation" EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" />
+          <EntitySet Name="tbl_ParentInformation" EntityType="ChildProtectionDbModel.tbl_ParentInformation" />
+          <EntitySet Name="tbl_Profile" EntityType="ChildProtectionDbModel.tbl_Profile" />
         </EntityContainer>
         <EntityType Name="tbl_User">
           <Key>
@@ -156,6 +201,36 @@
           <Property Name="Crime_Date_Time" Type="DateTime" Precision="3" />
           <Property Name="InformationAboutCrime" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="NearestPoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_ParentInformation">
+          <Key>
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Report_by_Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CNIC" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Relation_to_Missing_Child" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Father_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Of_Child" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Report_Created_Date_Time" Type="DateTime" Precision="3" />
+          <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChildMissingLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -232,6 +307,38 @@
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ParentInformation">
+            <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ParentInformation">
+              <MappingFragment StoreEntitySet="tbl_ParentInformation">
+                <ScalarProperty Name="ChildMissingLocation" ColumnName="ChildMissingLocation" />
+                <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+                <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
+                <ScalarProperty Name="Report_Created_Date_Time" ColumnName="Report_Created_Date_Time" />
+                <ScalarProperty Name="Phone__" ColumnName="Phone_#" />
+                <ScalarProperty Name="Address_Of_Child" ColumnName="Address_Of_Child" />
+                <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+                <ScalarProperty Name="Relation_to_Missing_Child" ColumnName="Relation_to_Missing_Child" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_" ColumnName="Phone#" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Profile">
+            <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_Profile">
+              <MappingFragment StoreEntitySet="tbl_Profile">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StationName" ColumnName="StationName" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

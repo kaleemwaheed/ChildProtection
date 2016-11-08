@@ -17,7 +17,7 @@ namespace UIChildProtection.Areas.Admin.Controllers
         private ChildInfoBs objBs;
         private UserBs objUserBs;
         string policStationNameLocal;
-
+        int id;
         public AddReportController()
         {
             objBs = new ChildInfoBs();
@@ -226,7 +226,16 @@ namespace UIChildProtection.Areas.Admin.Controllers
                             obj.PoliceStation = policStationNameLocal;
                             obj.Report_Created_Date_Time = DateTime.Now;
                             objBs.Insert(obj);
-                            TempData["Msg"] = "Created Successfully";
+
+
+                            var getid = objBs.GetALL().Where(x => x.Report_Created_Date_Time == obj.Report_Created_Date_Time);
+
+                            foreach (var item in getid)
+                            {
+                                id = item.ChildId;
+                            }
+                            TempData["Msg"] = "Created Successfully. Your Missing Report #" + id;
+                            //TempData["Msg"] = "Created Successfully";
                             return RedirectToAction("Index");
                         }
                         catch (DbEntityValidationException ex)

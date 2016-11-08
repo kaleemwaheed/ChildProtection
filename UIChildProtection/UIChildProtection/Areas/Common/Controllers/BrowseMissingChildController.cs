@@ -26,7 +26,7 @@ namespace UIChildProtection.Areas.Common.Controllers
             //    System.IO.File.Delete(filePath);
 
             //}
-            var childinfo = objBs.GetALL().Where(x => x.IsApproved == "A");
+            var childinfo = objBs.GetALL().Where(x => x.IsApproved == "A").Reverse();
           
 
 

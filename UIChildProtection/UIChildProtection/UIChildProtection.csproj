@@ -143,6 +143,15 @@
     <Content Include="Areas\Admin\Views\MissingChild\Display.cshtml" />
     <Content Include="Areas\Admin\Views\MissingChild\Edit.cshtml" />
     <Content Include="Areas\Common\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Index.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Sindh.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\KPK.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Punjab.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Blochistan.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Capital.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Kashmir.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\Gilgit.cshtml" />
+    <Content Include="Areas\Common\Views\ViewMissingReport\City.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="img\1235914_896849423660479_8824547505819836143_n.jpg" />
     <Content Include="img\20160606_110155.jpg" />
@@ -225,7 +234,6 @@
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Common\Controllers\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
-    <Folder Include="Areas\Common\Views\ViewMissingReport\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
     <Folder Include="Controllers\" />

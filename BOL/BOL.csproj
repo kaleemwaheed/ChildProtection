@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChildProtectionModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EyeFind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tbl_ChildInfo.cs">
       <DependentUpon>ChildProtectionModel.tt</DependentUpon>

@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace BOL
 {
     public class tbl_SearchValidation
-    {
+    {   
+        public int? id { get; set; }
         public string ChildName { get; set; }
         public string ChildAlternativeName { get; set; }
          public Nullable<int> Age { get; set; }

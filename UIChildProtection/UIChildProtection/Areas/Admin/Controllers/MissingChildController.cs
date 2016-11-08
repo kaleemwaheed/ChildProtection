@@ -20,7 +20,7 @@ namespace UIChildProtection.Areas.Admin.Controllers
         }
         public ActionResult Index(String Page)
         {
-            var childinfo = objBs.GetALL().Where(x => x.IsApproved == "A");
+            var childinfo = objBs.GetALL().Where(x => x.IsApproved == "A").Reverse();
             ViewBag.TotalPages = Math.Ceiling(objBs.GetALL().Where(x => x.IsApproved == "A").Count() / 6.0);
 
 
