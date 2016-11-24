@@ -93,17 +93,17 @@ namespace UIChildProtection.Areas.Common.Controllers
 
             List<SelectListItem> Colour = new List<SelectListItem>();
             Colour.Add(new SelectListItem { Text = "Select", Value = "Select" });
-            Colour.Add(new SelectListItem { Text = "black", Value = "black" });
-            Colour.Add(new SelectListItem { Text = "brown", Value = "brown" });
-            Colour.Add(new SelectListItem { Text = "gray", Value = "gray" });
-            Colour.Add(new SelectListItem { Text = "blue", Value = "blue" });
-            Colour.Add(new SelectListItem { Text = "hazel", Value = "hazel" });
-            Colour.Add(new SelectListItem { Text = "pink", Value = "pink" });
-            Colour.Add(new SelectListItem { Text = "purple", Value = "purple" });
-            Colour.Add(new SelectListItem { Text = "yellow", Value = "yellow" });
-            Colour.Add(new SelectListItem { Text = "green", Value = "green" });
-            Colour.Add(new SelectListItem { Text = "white", Value = "white" });
-            Colour.Add(new SelectListItem { Text = "orange", Value = "orange" });
+            Colour.Add(new SelectListItem { Text = "black", Value = "Black" });
+            Colour.Add(new SelectListItem { Text = "brown", Value = "Brown" });
+            Colour.Add(new SelectListItem { Text = "gray", Value = "Gray" });
+            Colour.Add(new SelectListItem { Text = "blue", Value = "Blue" });
+            Colour.Add(new SelectListItem { Text = "hazel", Value = "Hazel" });
+            Colour.Add(new SelectListItem { Text = "pink", Value = "Pink" });
+            Colour.Add(new SelectListItem { Text = "purple", Value = "Purple" });
+            Colour.Add(new SelectListItem { Text = "yellow", Value = "Yellow" });
+            Colour.Add(new SelectListItem { Text = "green", Value = "Green" });
+            Colour.Add(new SelectListItem { Text = "white", Value = "White" });
+            Colour.Add(new SelectListItem { Text = "orange", Value = "Orange" });
             ViewBag.Colour = Colour;
 
 

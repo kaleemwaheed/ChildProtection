@@ -4,12 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4b7939196ef24907b50714b29cf25ec5" Name="Diagram1" ZoomLevel="59">
+      <Diagram DiagramId="4b7939196ef24907b50714b29cf25ec5" Name="Diagram1" ZoomLevel="46">
         <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_User" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_ChildInfo" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" Width="1.5" PointX="3.375" PointY="4.75" />
-        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_ParentInformation" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_Profile" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" Width="1.5" PointX="6.625" PointY="8.625" />
+        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_ParentInformation" Width="1.5" PointX="8" PointY="4.125" />
+        <EntityTypeShape EntityType="ChildProtectionDbModel.tbl_Profile" Width="1.5" PointX="3.5" PointY="8" />
+        <AssociationConnector Association="ChildProtectionDbModel.FK__tbl_Paren__Child__2739D489" />
+        <AssociationConnector Association="ChildProtectionDbModel.FK__tbl_Profi__UserI__2B0A656D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

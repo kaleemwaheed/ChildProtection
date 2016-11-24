@@ -72,6 +72,12 @@
       <DependentUpon>ChildProtectionModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_ChildInfoValidation.cs" />
+    <Compile Include="tbl_ParentInformation.cs">
+      <DependentUpon>ChildProtectionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Profile.cs">
+      <DependentUpon>ChildProtectionModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_SearchValidation.cs" />
     <Compile Include="tbl_SuspectPersonInformation.cs">
       <DependentUpon>ChildProtectionModel.tt</DependentUpon>

@@ -38,12 +38,12 @@
                         <h5>Father Name:  @item.Father_Name</h5>
                     </div>
                     <h6>Missing Date  @item.Child_Missing_Date_Time </h6>
-                    @{ if (@User.Identity.Name == item.PoliceStationEmail)
+                    @*@{ if (@User.Identity.Name == item.PoliceStationEmail)
                         {
                             @Html.ActionLink("Delete", "Delete", new { id = item.ChildId })
                         }
 
-                    }
+                    }*@
 
                     @*@{ if (@User.Identity.Name == item.PoliceStationEmail)
                             {

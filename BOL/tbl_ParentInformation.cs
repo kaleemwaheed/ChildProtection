@@ -14,7 +14,7 @@ namespace BOL
     
     public partial class tbl_ParentInformation
     {
-        public int ChildId { get; set; }
+        public int Id { get; set; }
         public string Report_by_Person_Name { get; set; }
         public Nullable<long> CNIC { get; set; }
         public string Address { get; set; }
@@ -28,5 +28,8 @@ namespace BOL
         public string PoliceStationEmail { get; set; }
         public string PoliceStation { get; set; }
         public string ChildMissingLocation { get; set; }
+        public Nullable<int> ChildId { get; set; }
+    
+        public virtual tbl_ChildInfo tbl_ChildInfo { get; set; }
     }
 }

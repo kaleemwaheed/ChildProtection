@@ -73,5 +73,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ParentInformation">
+      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ParentInformation">
+        <MappingFragment StoreEntitySet="tbl_ParentInformation">
+          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+          <ScalarProperty Name="ChildMissingLocation" ColumnName="ChildMissingLocation" />
+          <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+          <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
+          <ScalarProperty Name="Report_Created_Date_Time" ColumnName="Report_Created_Date_Time" />
+          <ScalarProperty Name="Phone__" ColumnName="Phone_#" />
+          <ScalarProperty Name="Address_Of_Child" ColumnName="Address_Of_Child" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Relation_to_Missing_Child" ColumnName="Relation_to_Missing_Child" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_" ColumnName="Phone#" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Profile">
+      <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_Profile">
+        <MappingFragment StoreEntitySet="tbl_Profile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

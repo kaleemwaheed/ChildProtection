@@ -36,6 +36,38 @@
     <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
     <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
   </EntityType>
+  <EntityType Name="tbl_ParentInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Report_by_Person_Name" Type="varchar" MaxLength="50" />
+    <Property Name="CNIC" Type="bigint" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="Phone#" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Relation_to_Missing_Child" Type="varchar" MaxLength="50" />
+    <Property Name="Father_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Address_Of_Child" Type="varchar" MaxLength="150" />
+    <Property Name="Phone_#" Type="varchar" MaxLength="50" />
+    <Property Name="Report_Created_Date_Time" Type="datetime" />
+    <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+    <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
+    <Property Name="ChildId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Profile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="StationName" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
   <EntityType Name="tbl_SuspectPersonInformation">
     <Key>
       <PropertyRef Name="Id" />
@@ -69,9 +101,43 @@
     <Property Name="Location" Type="varchar" MaxLength="50" />
     <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
   </EntityType>
+  <Association Name="FK__tbl_Paren__Child__2739D489">
+    <End Role="tbl_ChildInfo" Type="Self.tbl_ChildInfo" Multiplicity="0..1" />
+    <End Role="tbl_ParentInformation" Type="Self.tbl_ParentInformation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ChildInfo">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="tbl_ParentInformation">
+        <PropertyRef Name="ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Profi__UserI__2B0A656D">
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+    <End Role="tbl_Profile" Type="Self.tbl_Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="tbl_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ChildProtectionDbModelStoreContainer">
     <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ParentInformation" EntityType="Self.tbl_ParentInformation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Profile" EntityType="Self.tbl_Profile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_SuspectPersonInformation" EntityType="Self.tbl_SuspectPersonInformation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tbl_Paren__Child__2739D489" Association="Self.FK__tbl_Paren__Child__2739D489">
+      <End Role="tbl_ChildInfo" EntitySet="tbl_ChildInfo" />
+      <End Role="tbl_ParentInformation" EntitySet="tbl_ParentInformation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Profi__UserI__2B0A656D" Association="Self.FK__tbl_Profi__UserI__2B0A656D">
+      <End Role="tbl_User" EntitySet="tbl_User" />
+      <End Role="tbl_Profile" EntitySet="tbl_Profile" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -14,6 +14,12 @@ namespace BOL
     
     public partial class tbl_User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_User()
+        {
+            this.tbl_Profile = new HashSet<tbl_Profile>();
+        }
+    
         public int UserId { get; set; }
         public string UserEmail { get; set; }
         public string Password { get; set; }
@@ -22,5 +28,8 @@ namespace BOL
         public string City { get; set; }
         public string Location { get; set; }
         public string PhoneNumber { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_Profile> tbl_Profile { get; set; }
     }
 }

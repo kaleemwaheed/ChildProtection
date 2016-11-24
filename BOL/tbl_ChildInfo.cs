@@ -14,6 +14,12 @@ namespace BOL
     
     public partial class tbl_ChildInfo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_ChildInfo()
+        {
+            this.tbl_ParentInformation = new HashSet<tbl_ParentInformation>();
+        }
+    
         public int ChildId { get; set; }
         public string ChildName { get; set; }
         public string ChildAlternativeName { get; set; }
@@ -45,5 +51,8 @@ namespace BOL
         public string PoliceStationEmail { get; set; }
         public string PoliceStation { get; set; }
         public string ChildMissingLocation { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_ParentInformation> tbl_ParentInformation { get; set; }
     }
 }

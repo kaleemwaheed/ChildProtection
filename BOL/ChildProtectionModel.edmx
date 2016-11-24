@@ -43,9 +43,9 @@
         </EntityType>
         <EntityType Name="tbl_ParentInformation">
           <Key>
-            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Report_by_Person_Name" Type="varchar" MaxLength="50" />
           <Property Name="CNIC" Type="bigint" />
           <Property Name="Address" Type="varchar" MaxLength="150" />
@@ -59,19 +59,19 @@
           <Property Name="PoliceStationEmail" Type="varchar" MaxLength="50" />
           <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
           <Property Name="ChildMissingLocation" Type="varchar" MaxLength="150" />
+          <Property Name="ChildId" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tbl_Profile">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Role" Type="varchar" MaxLength="50" />
           <Property Name="StationName" Type="varchar" MaxLength="50" />
           <Property Name="City" Type="varchar" MaxLength="50" />
           <Property Name="Location" Type="varchar" MaxLength="50" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+          <Property Name="UserId" Type="int" />
         </EntityType>
         <EntityType Name="tbl_SuspectPersonInformation">
           <Key>
@@ -106,21 +106,44 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
           <Property Name="Location" Type="varchar" MaxLength="50" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
         </EntityType>
+        <Association Name="FK__tbl_Paren__Child__2739D489">
+          <End Role="tbl_ChildInfo" Type="Self.tbl_ChildInfo" Multiplicity="0..1" />
+          <End Role="tbl_ParentInformation" Type="Self.tbl_ParentInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChildInfo">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="tbl_ParentInformation">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_Profi__UserI__2B0A656D">
+          <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="0..1" />
+          <End Role="tbl_Profile" Type="Self.tbl_Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ChildProtectionDbModelStoreContainer">
           <EntitySet Name="tbl_ChildInfo" EntityType="Self.tbl_ChildInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_ParentInformation" EntityType="Self.tbl_ParentInformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Profile" EntityType="Self.tbl_Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_SuspectPersonInformation" EntityType="Self.tbl_SuspectPersonInformation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_Profile" EntityType="Self.tbl_Profile" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tbl_Profile].[UserId] AS [UserId], 
-    [tbl_Profile].[Role] AS [Role], 
-    [tbl_Profile].[StationName] AS [StationName], 
-    [tbl_Profile].[City] AS [City], 
-    [tbl_Profile].[Location] AS [Location], 
-    [tbl_Profile].[PhoneNumber] AS [PhoneNumber]
-    FROM [dbo].[tbl_Profile] AS [tbl_Profile]</DefiningQuery>
-          </EntitySet>
+          <AssociationSet Name="FK__tbl_Paren__Child__2739D489" Association="Self.FK__tbl_Paren__Child__2739D489">
+            <End Role="tbl_ChildInfo" EntitySet="tbl_ChildInfo" />
+            <End Role="tbl_ParentInformation" EntitySet="tbl_ParentInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_Profi__UserI__2B0A656D" Association="Self.FK__tbl_Profi__UserI__2B0A656D">
+            <End Role="tbl_User" EntitySet="tbl_User" />
+            <End Role="tbl_Profile" EntitySet="tbl_Profile" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -132,6 +155,14 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
           <EntitySet Name="tbl_SuspectPersonInformation" EntityType="ChildProtectionDbModel.tbl_SuspectPersonInformation" />
           <EntitySet Name="tbl_ParentInformation" EntityType="ChildProtectionDbModel.tbl_ParentInformation" />
           <EntitySet Name="tbl_Profile" EntityType="ChildProtectionDbModel.tbl_Profile" />
+          <AssociationSet Name="FK__tbl_Paren__Child__2739D489" Association="ChildProtectionDbModel.FK__tbl_Paren__Child__2739D489">
+            <End Role="tbl_ChildInfo" EntitySet="tbl_ChildInfo" />
+            <End Role="tbl_ParentInformation" EntitySet="tbl_ParentInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbl_Profi__UserI__2B0A656D" Association="ChildProtectionDbModel.FK__tbl_Profi__UserI__2B0A656D">
+            <End Role="tbl_User" EntitySet="tbl_User" />
+            <End Role="tbl_Profile" EntitySet="tbl_Profile" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tbl_User">
           <Key>
@@ -145,6 +176,7 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_Profile" Relationship="ChildProtectionDbModel.FK__tbl_Profi__UserI__2B0A656D" FromRole="tbl_User" ToRole="tbl_Profile" />
         </EntityType>
         <EntityType Name="tbl_ChildInfo">
           <Key>
@@ -181,6 +213,7 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
           <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ChildMissingLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_ParentInformation" Relationship="ChildProtectionDbModel.FK__tbl_Paren__Child__2739D489" FromRole="tbl_ChildInfo" ToRole="tbl_ParentInformation" />
         </EntityType>
         <EntityType Name="tbl_SuspectPersonInformation">
           <Key>
@@ -204,9 +237,9 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
         </EntityType>
         <EntityType Name="tbl_ParentInformation">
           <Key>
-            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Report_by_Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CNIC" Type="Int64" />
           <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
@@ -220,18 +253,46 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
           <Property Name="PoliceStationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ChildMissingLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ChildId" Type="Int32" />
+          <NavigationProperty Name="tbl_ChildInfo" Relationship="ChildProtectionDbModel.FK__tbl_Paren__Child__2739D489" FromRole="tbl_ParentInformation" ToRole="tbl_ChildInfo" />
         </EntityType>
         <EntityType Name="tbl_Profile">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="StationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="tbl_User" Relationship="ChildProtectionDbModel.FK__tbl_Profi__UserI__2B0A656D" FromRole="tbl_Profile" ToRole="tbl_User" />
         </EntityType>
+        <Association Name="FK__tbl_Paren__Child__2739D489">
+          <End Type="ChildProtectionDbModel.tbl_ChildInfo" Role="tbl_ChildInfo" Multiplicity="0..1" />
+          <End Type="ChildProtectionDbModel.tbl_ParentInformation" Role="tbl_ParentInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChildInfo">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="tbl_ParentInformation">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbl_Profi__UserI__2B0A656D">
+          <End Type="ChildProtectionDbModel.tbl_User" Role="tbl_User" Multiplicity="0..1" />
+          <End Type="ChildProtectionDbModel.tbl_Profile" Role="tbl_Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="tbl_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -313,6 +374,7 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
           <EntitySetMapping Name="tbl_ParentInformation">
             <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_ParentInformation">
               <MappingFragment StoreEntitySet="tbl_ParentInformation">
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
                 <ScalarProperty Name="ChildMissingLocation" ColumnName="ChildMissingLocation" />
                 <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
                 <ScalarProperty Name="PoliceStationEmail" ColumnName="PoliceStationEmail" />
@@ -326,19 +388,20 @@ warning 6002: The table/view 'ChildProtectionDb.dbo.tbl_Profile' does not have a
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="CNIC" ColumnName="CNIC" />
                 <ScalarProperty Name="Report_by_Person_Name" ColumnName="Report_by_Person_Name" />
-                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Profile">
             <EntityTypeMapping TypeName="ChildProtectionDbModel.tbl_Profile">
               <MappingFragment StoreEntitySet="tbl_Profile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="StationName" ColumnName="StationName" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

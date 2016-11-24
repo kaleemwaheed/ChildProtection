@@ -14,11 +14,14 @@ namespace BOL
     
     public partial class tbl_Profile
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
         public string Role { get; set; }
         public string StationName { get; set; }
         public string City { get; set; }
         public string Location { get; set; }
         public string PhoneNumber { get; set; }
+        public Nullable<int> UserId { get; set; }
+    
+        public virtual tbl_User tbl_User { get; set; }
     }
 }
